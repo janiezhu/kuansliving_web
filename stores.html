@@ -138,9 +138,16 @@ img{display:block;width:100%;object-fit:cover}
 .map-contact span:not(.mc-sep){flex:1;text-align:center}
 .map-contact .mc-sep{display:none}
 @media(max-width:768px){.content-block p.map-contact{display:block;font-size:clamp(11px,1.6vw,13px)}.map-contact span:not(.mc-sep){display:block;text-align:left}}
+/* 門市清單 — 桌機 3 欄 */
+#store-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: start; }
+#store-list .store-g { margin-bottom: 0 !important; }
+@media(max-width:900px){ #store-list { grid-template-columns: 1fr 1fr; } }
+@media(max-width:500px){ #store-list { grid-template-columns: 1fr; } }
 /* 城市篩選鈕 — 統一寬度、文字置中 */
-#city-tabs .btn-gold { width: calc((100% - 16px)/3); min-width: 0; padding: 14px 12px; justify-content: center; }
-@media(max-width:768px){ #city-tabs .btn-gold { width: calc((100% - 8px)/2); } }
+#city-tabs { -ms-overflow-style: none; scrollbar-width: none; padding: 8px 4px; }
+#city-tabs::-webkit-scrollbar { display: none; }
+#city-tabs .btn-gold { width: auto; min-width: max-content; padding: 12px 24px; justify-content: center; white-space: nowrap; flex-shrink: 0; box-sizing: border-box; }
+@media(max-width:768px){ #city-tabs .btn-gold { width: auto; min-width: max-content; } }
 /* 選中的城市 — 實心金底白字 */
 .btn-gold.active {
   background: var(--accent); color: #fff; border-color: var(--accent);
@@ -412,9 +419,8 @@ img{display:block;width:100%;object-fit:cover}
 <main class="page-main">
   <div class="container">
 
-        <div class="grid-2c content-block" style="align-items:start">
-      <div>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px" id="city-tabs">
+        <div class="content-block">
+      <div style="display:flex;flex-wrap:nowrap;gap:8px;margin-bottom:24px;overflow-x:auto;-webkit-overflow-scrolling:touch" id="city-tabs">
           <button onclick="showCity('taipei',this)" class="btn-gold active">Taipei 台北</button>
           <button onclick="showCity('newtaipei',this)" class="btn-gold">New Taipei 新北</button>
           <button onclick="showCity('hsinchu',this)" class="btn-gold">Hsinchu 新竹</button>
@@ -423,20 +429,22 @@ img{display:block;width:100%;object-fit:cover}
           <button onclick="showCity('kaohsiung',this)" class="btn-gold">Kaohsiung 高雄</button>
           <button onclick="showCity('shanghai',this)" class="btn-gold">Shanghai 上海</button>
         </div>
-        <div id="store-list">
+      <div id="store-list" style="margin-top:24px">
           <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('112臺北市北投區八仙里中央南路二段16號5/6樓')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Warehouse</span><p style="font-weight:600;margin-bottom:4px">寬庭倉庫</p><p style="font-size:12px;color:var(--mid)">台北市北投區中央南路二段 16 號 1/5/6 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2893-0881</p></div>
           <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('台北市士林區中山北路六段77號 遠東SOGO天母店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">ÈVE</span><p style="font-weight:600;margin-bottom:4px">寬庭依芙 · 遠東SOGO天母店</p><p style="font-size:12px;color:var(--mid)">台北市士林區中山北路六段 77 號 6 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2833-0977</p></div>
           <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('台北市信義區松高路12號 新光三越信義A8')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Classic</span><p style="font-weight:600;margin-bottom:4px">寬庭典藏 · 新光三越信義A8</p><p style="font-size:12px;color:var(--mid)">台北市信義區松高路 12 號 6 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 8780-9653</p></div>
           <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('台北市大安區忠孝東路四段45號 遠東SOGO忠孝店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Imperial</span><p style="font-weight:600;margin-bottom:4px">寬庭御璽 · 遠東SOGO忠孝店</p><p style="font-size:12px;color:var(--mid)">台北市大安區忠孝東路四段 45 號 9 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2740-3552</p></div>
+          <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('104台北市中山區南京西路12號7樓 新光三越南西店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">ÈVE</span><p style="font-weight:600;margin-bottom:4px">寬庭依芙 · 新光三越南西店</p><p style="font-size:12px;color:var(--mid)">104 台北市中山區南京西路 12 號 7 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2523-8572</p></div>
+          <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('106台北市大安區忠孝東路四段45號9樓 遠東SOGO忠孝店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Imperial</span><p style="font-weight:600;margin-bottom:4px">寬庭御璽 · 遠東SOGO忠孝店</p><p style="font-size:12px;color:var(--mid)">106 台北市大安區忠孝東路四段 45 號 9 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2740-3552</p></div>
+          <div class="taipei store-g" style="padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('105台北市松山區復興南路一段39號1樓 微風廣場')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Lifestyle</span><p style="font-weight:600;margin-bottom:4px">寬庭生活館 · 微風廣場</p><p style="font-size:12px;color:var(--mid)">105 台北市松山區復興南路一段 39 號 1 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 8772-3318</p></div>
           <div class="newtaipei store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('新北市板橋區新站路28號 板橋大遠百')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">ÈVE</span><p style="font-weight:600;margin-bottom:4px">寬庭依芙 · 板橋大遠百</p><p style="font-size:12px;color:var(--mid)">新北市板橋區新站路 28 號 7 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(02) 2953-1658</p></div>
           <div class="hsinchu store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('新竹市東區中央路239號 新竹SOGO')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Lifestyle</span><p style="font-weight:600;margin-bottom:4px">寬庭生活館 · 新竹SOGO</p><p style="font-size:12px;color:var(--mid)">新竹市東區中央路 239 號 6 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(03) 526-5599</p></div>
           <div class="taichung store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('台中市西屯區台灣大道三段301號 新光三越台中店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Classic</span><p style="font-weight:600;margin-bottom:4px">寬庭典藏 · 新光三越台中店</p><p style="font-size:12px;color:var(--mid)">台中市西屯區台灣大道三段 301 號 7 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(04) 2259-9153</p></div>
           <div class="tainan store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('台南市中西區西門路一段658號 新光三越台南西門店')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Classic</span><p style="font-weight:600;margin-bottom:4px">寬庭典藏 · 新光三越台南西門店</p><p style="font-size:12px;color:var(--mid)">台南市中西區西門路一段 658 號 B1</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(06) 303-1006</p></div>
           <div class="kaohsiung store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('高雄市前金區成功一路266-1號 漢神百貨')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Classic</span><p style="font-weight:600;margin-bottom:4px">寬庭典藏 · 漢神百貨本館</p><p style="font-size:12px;color:var(--mid)">高雄市前金區成功一路 266-1 號 6 樓</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">(07) 215-2900</p></div>
           <div class="shanghai store-g" style="display:none;padding:16px;border:1px solid var(--mist);margin-bottom:10px;cursor:pointer" onclick="updateMap('上海市普陀區莫干山路20號 寬庭會館')"><span style="font-family:var(--font-en);font-size:7.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(201,169,110,.3);padding:2px 8px;display:inline-block;margin-bottom:6px">Flagship</span><p style="font-weight:600;margin-bottom:4px">寬庭會館 · 上海</p><p style="font-size:12px;color:var(--mid)">上海市普陀區莫干山路 20 號</p><p style="font-family:var(--font-en);font-size:11px;color:var(--stone)">+86 21 5252-2990</p></div>
-        </div>
       </div>
-      <div>
+      <div style="margin-top:24px">
         <iframe id="store-map" src="https://maps.google.com/maps?q=112%E8%87%BA%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E5%85%AB%E4%BB%99%E9%87%8C%E4%B8%AD%E5%A4%AE%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B516%E8%99%9F5%2F6%E6%A8%93&output=embed&hl=zh-TW" style="width:100%;height:480px;border:none" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
           <a id="map-link" href="https://maps.google.com/?q=112%E8%87%BA%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E5%85%AB%E4%BB%99%E9%87%8C%E4%B8%AD%E5%A4%AE%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B516%E8%99%9F5%2F6%E6%A8%93" target="_blank" class="btn-gold" style="justify-content:center">開啟Google Maps</a>
@@ -444,6 +452,7 @@ img{display:block;width:100%;object-fit:cover}
         </div>
       </div>
     </div>
+  </div>
     <script>
     function updateMap(addr){
       const enc=encodeURIComponent(addr);
