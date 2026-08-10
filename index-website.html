@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <title>寬庭 KUAN'S LIVING｜頂級寢飾與織品生活美學</title>
 <meta name="description" content="寬庭 KUAN'S LIVING，三十餘年深耕高端市場，提供義大利手工寢飾、織品配件、居家香氛與工藝裝飾，為您打造極致生活美學。">
-<link rel="canonical" href="https://www.kuansliving.com/index-website.html">
-<link rel="alternate" hreflang="zh-TW" href="https://www.kuansliving.com/index-website.html">
-<link rel="alternate" hreflang="x-default" href="https://www.kuansliving.com/index-website.html">
+<link rel="canonical" href="https://www.kuansliving.com/index.html">
+<link rel="alternate" hreflang="zh-TW" href="https://www.kuansliving.com/index.html">
+<link rel="alternate" hreflang="x-default" href="https://www.kuansliving.com/index.html">
 <meta property="og:title" content="寬庭 KUAN'S LIVING｜頂級寢飾與織品生活美學">
 <meta property="og:description" content="寬庭 KUAN'S LIVING，三十餘年深耕高端市場，提供義大利手工寢飾、織品配件、居家香氛與工藝裝飾，為您打造極致生活美學。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.kuansliving.com/index-website.html">
+<meta property="og:url" content="https://www.kuansliving.com/index.html">
 <meta property="og:image" content="https://www.kuansliving.com/jpg/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="寬庭 KUAN'S LIVING｜頂級寢飾與織品生活美學">
@@ -48,14 +48,24 @@
 <style>
 /* ── Reset & Base ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Noto Sans TC', sans-serif; background: #0A0A0A; color: #1A1A1A; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { font-family: 'Noto Sans TC', sans-serif; background: #0A0A0A; color: #1A1A1A; overflow-x: hidden; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 img { display: block; width: 100%; object-fit: cover; }
 a { text-decoration: none; color: inherit; }
 
 @font-face {
   font-family: 'CreamFont';
-  src: url('font/creamfont-3.1.otf') format('opentype');
+  src: url('font/creamfont-3.1.woff2') format('woff2'),
+       url('font/creamfont-3.1.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face{font-family:'MontserratMedium';src:url('font/Montserrat-Medium.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF;}
+@font-face{font-family:'MontserratThin';src:url('font/Montserrat-Thin.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face {
+  font-family: 'SourceHanSerifCN';
+  src: url('font/SourceHanSerifCN-Medium.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -72,7 +82,7 @@ a { text-decoration: none; color: inherit; }
   --mist:   #D4D0C8;
   --font-en: 'Montserrat', sans-serif;
   --font-zh: 'Noto Sans TC', sans-serif;
-  --font-display: 'CreamFont', 'Noto Sans TC', sans-serif;
+  --font-display: 'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;
   --ease:   cubic-bezier(.16,1,.3,1);
 }
 
@@ -107,10 +117,10 @@ a { text-decoration: none; color: inherit; }
 .nav-logo {
   font-family: var(--font-en); font-size: 13px; font-weight: 300;
   letter-spacing: .22em; text-transform: uppercase;
-  color: var(--white);
+  color: var(--black);
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(0,0,0,0.48);
-  border: none;
+  background: rgba(255,255,255,0.4);
+  border: 1px solid #C9A96E;
   border-radius: 999px;
   height: 44px;
   padding: 0 18px;
@@ -120,25 +130,26 @@ a { text-decoration: none; color: inherit; }
 }
 #top-nav.light-nav .nav-logo {
   color: var(--black);
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.4);
+  border: 1px solid #C9A96E;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
-.nav-logo img { height: 20px; width: auto; filter: brightness(0) invert(1); transition: filter 0.3s ease; }
+.nav-logo img { height: 20px; width: auto; filter: none; transition: filter 0.3s ease; }
 #top-nav.light-nav .nav-logo img { filter: none; }
 /* Nav 整體連結群組 pill — 毛玻璃霧化效果（Digitize 圖一風格）*/
 .nav-links-wrap {
   display: flex; align-items: center;
-  border: 1px solid rgba(255,255,255,0.16);
+  border: 1px solid #C9A96E;
   border-radius: 999px;
   padding: 0 6px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(255,255,255,0.4);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 }
 #top-nav.light-nav .nav-links-wrap {
-  border-color: rgba(0,0,0,0.1);
-  background: rgba(255,255,255,0.6);
+  border: 1px solid #C9A96E;
+  background: rgba(255,255,255,0.4);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
 }
@@ -146,7 +157,7 @@ a { text-decoration: none; color: inherit; }
 .nav-main > li { position: relative; height: 44px; display: flex; align-items: center; padding: 0 16px; }
 .nav-main > li > a {
   font-family: var(--font-zh); font-size: 13.5px;
-  color: rgba(255,255,255,0.78);
+  color: rgba(0,0,0,0.62);
   cursor: default; white-space: nowrap;
   position: relative;
   transition: color 0.3s ease;
@@ -160,7 +171,7 @@ a { text-decoration: none; color: inherit; }
   transform-origin: left center;
   transition: transform 0.28s cubic-bezier(.16,1,.3,1);
 }
-.nav-main > li:hover > a { color: rgba(255,255,255,1); }
+.nav-main > li:hover > a { color: var(--gold); }
 .nav-main > li:hover > a::after { transform: scaleX(1); }
 /* Light-nav：深色文字 + 金色底線 */
 #top-nav.light-nav .nav-main > li > a { color: rgba(0,0,0,0.62); }
@@ -207,7 +218,7 @@ a { text-decoration: none; color: inherit; }
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--white); transition: all 0.3s ease; }
 #top-nav.light-nav .hamburger span { background: var(--black); }
-@media(max-width:1024px) { .nav-main { display: none; } .hamburger { display: flex; } }
+@media(max-width:1024px) { .nav-main { display: none; } .nav-links-wrap { display: none; } .hamburger { display: flex; } }
 @media(max-width:768px) { .nav-inner { padding: 0 24px; } }
 
 /* Mobile menu */
@@ -270,26 +281,9 @@ a { text-decoration: none; color: inherit; }
   height: 100vh; min-height: 640px;
   position: relative; overflow: hidden;
   display: flex; align-items: center; justify-content: center;
-  background: var(--black);
+  background: #FFFFFF url('mp4/index_bg.jpg') center/cover no-repeat;
 }
-.hero-video-wrap {
-  position: absolute; inset: 0;
-  overflow: hidden;
-}
-.hero-video-wrap video {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: center;
-  opacity: 0.6;
-}
-/* ── Digitize 動態效果 ─────────────────────────────────── */
-/* Ken Burns — 慢速縮放背景 */
-@keyframes kenBurns {
-  0%   { transform: scale(1.08) translateY(-6px); }
-  100% { transform: scale(1.0)  translateY(0); }
-}
-.hero-video-wrap video {
-  animation: kenBurns 20s cubic-bezier(.25,.46,.45,.94) forwards;
-}
+.hero-video-wrap { display: none; }
 /* 星點閃爍 — 兩層交錯 */
 @keyframes starTwinkle {
   0%,100% { opacity: 0.15; }
@@ -299,9 +293,7 @@ a { text-decoration: none; color: inherit; }
   0%,100% { opacity: 0.8; }
   60%      { opacity: 0.1; }
 }
-.hero-stars {
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
-}
+.hero-stars { display: none; }
 .hero-stars::before, .hero-stars::after {
   content: ''; position: absolute; inset: 0;
 }
@@ -337,24 +329,14 @@ a { text-decoration: none; color: inherit; }
   0%,100% { opacity: 0.55; transform: scale(1); }
   50%      { opacity: 0.9;  transform: scale(1.06); }
 }
-.hero-ambient {
-  position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse 50% 40% at 50% 68%, rgba(12,38,18,.6) 0%, transparent 70%);
-  animation: ambientGlow 9s ease-in-out infinite;
-}
+.hero-ambient { display: none; }
 
 /* 四角 Vignette — Digitize 風格暗角 */
-.hero-overlay {
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 130% 45% at 50% 0%, rgba(0,0,0,0.75) 0%, transparent 100%),
-    radial-gradient(ellipse 130% 55% at 50% 100%, rgba(0,0,0,0.85) 0%, transparent 100%),
-    linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.04) 35%, rgba(0,0,0,0.04) 65%, rgba(0,0,0,0.25) 100%);
-}
+.hero-overlay { display: none; }
 /* 置中內容區 */
 .hero-content {
   position: relative; z-index: 2;
-  max-width: 860px; margin: 0 auto;
+  max-width: 1400px; margin: 0 auto;
   padding: 0 48px; width: 100%;
   text-align: center;
   display: flex; flex-direction: column; align-items: center;
@@ -399,36 +381,36 @@ a { text-decoration: none; color: inherit; }
 /* KUAN'S LIVING 品牌 Logo 圖檔 */
 .hero-brand-img {
   display: block;
-  width: auto;
-  max-width: min(860px, 85vw);
+  width: 100%;
+  max-width: none;
   height: auto;
-  margin: 0 auto 20px;
+  margin: 0 auto 40px;
   object-fit: contain;
 }
 /* 英文副標 */
 .hero-en {
-  font-family: 'Montserrat', sans-serif; font-style: normal; font-weight: 300;
+  font-family: 'MontserratThin', sans-serif; font-style: normal; font-weight: normal;
   font-size: clamp(0.9rem, 1.4vw, 1.1rem);
-  color: #ffffff; letter-spacing: .06em;
+  color: #1A1A1A; letter-spacing: .06em;
   display: block; text-align: center;
   margin-top: 0;
   opacity: 0; transform: translateY(20px);
   animation: fadeUp 1s var(--ease) 0.75s forwards;
 }
-/* 中文副標 — CreamFont */
+/* 中文副標 — Source Han Serif */
 .hero-title-zh {
   display: block;
-  font-family: var(--font-display); font-weight: normal;
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-family: 'CreamFont','Noto Sans TC',sans-serif; font-weight: normal;
+  font-size: clamp(15px, 1.4vw, 20px);
   color: #8e8a7e;
-  letter-spacing: 0.15em;
+  letter-spacing: 2px;
   text-align: center;
   white-space: nowrap;
   margin-top: 8px;
 }
 /* ── Hero Mobile RWD ─────────────────────────────────────── */
 @media(max-width: 768px) {
-  .hero-content { padding: 0 28px; }
+  .hero-content { padding: 0 20px; }
   .hero-brand { font-size: clamp(2rem, 9.5vw, 3.5rem); letter-spacing: 0.14em; white-space: normal; }
   .hero-title-zh { white-space: normal; font-size: clamp(0.8rem, 3.5vw, 0.95rem); }
   .hero-en { font-size: clamp(0.8rem, 3.2vw, 0.95rem); }
@@ -447,27 +429,25 @@ a { text-decoration: none; color: inherit; }
   letter-spacing: .14em; text-transform: uppercase;
   padding: 14px 36px; display: inline-flex; align-items: center; gap: 10px;
   border-radius: 999px;
-  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(.16,1,.3,1);
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.25s cubic-bezier(.16,1,.3,1), opacity 0.25s ease;
   cursor: pointer;
 }
 /* 主按鈕 — 輪廓 Pill，hover 時放大（完全對應圖二 Digitize 風格）*/
 .btn-fill {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.65);
-  color: var(--white);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,0.65);
+  color: #1A1A1A;
 }
-.btn-fill:hover {
-  background: rgba(255,255,255,0.14);
-  border-color: rgba(255,255,255,1);
-  transform: scale(1.05);
-}
+.btn-fill:hover { background: transparent; border-color: rgba(0,0,0,0.85); transform: scale(1.05); opacity: 0.82; }
+.btn-fill:active { background: #000000; border-color: #000000; color: #fff; transform: none; opacity: 1; }
 /* 副按鈕 — 純文字 + 播放圖示，hover 時同樣微放大 */
 .btn-ghost {
   color: rgba(255,255,255,0.68);
   background: none; border: none; padding-left: 4px;
 }
 .btn-ghost::before { content: '▶'; font-size: 9px; opacity: 0.75; }
-.btn-ghost:hover { color: var(--white); transform: scale(1.05); }
+.btn-ghost:hover { color: rgba(255,255,255,0.68); transform: none; }
+.btn-ghost:active { color: var(--white); transform: none; }
 /* Scroll 指示器 — 置中底部 */
 .hero-scroll {
   position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%); z-index: 2;
@@ -536,7 +516,7 @@ a { text-decoration: none; color: inherit; }
   min-height: 260px;
 }
 .stats-inner {
-  max-width: 1400px; margin: 0 auto; padding: 0 48px; width: 100%;
+  max-width: 1400px; margin: 0 auto 48px; padding: 0 48px; width: 100%;
   display: grid; grid-template-columns: repeat(4,1fr);
   gap: 0; border-left: 1px solid rgba(0,0,0,0.1);
 }
@@ -551,7 +531,7 @@ a { text-decoration: none; color: inherit; }
 }
 .stat-unit { font-size: 1.6rem; }
 .stat-label { font-family: var(--font-zh); font-size: 12px; color: var(--stone); margin-top: 10px; }
-@media(max-width:768px) { .stats-inner { grid-template-columns: repeat(2,1fr); } .stat-item:nth-child(even) { border-right: none; } }
+@media(max-width:768px) { .stats-inner { grid-template-columns: repeat(2,1fr); padding: 0 20px; } .stat-item:nth-child(even) { border-right: none; } }
 
 /* ── 04 BRAND STORY PIN ──────────────────────────────────── */
 #story-pin { height: 280vh; }
@@ -672,7 +652,7 @@ a { text-decoration: none; color: inherit; }
 #media-strip { background: var(--white); padding: 40px 0; overflow: hidden; border-top: 1px solid #E8E0D8; border-bottom: 1px solid #E8E0D8; }
 .marquee-track { display: flex; gap: 64px; white-space: nowrap; will-change: transform; }
 .marquee-item { font-family: var(--font-en); font-size: 13px; font-weight: 300; letter-spacing: .18em; text-transform: uppercase; color: #000000; flex-shrink: 0; }
-.marquee-sep { color: var(--gold); font-size: 10px; }
+.marquee-sep { color: #076C44; font-size: 10px; }
 
 /* ── 07 SELECT BRANDS (HOVER REVEAL) ─────────────────────── */
 #select-wf { background: var(--cream); padding: 120px 0; }
@@ -761,16 +741,18 @@ a { text-decoration: none; color: inherit; }
   transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
 }
 .service-row.active { opacity: 1; transform: translateY(0); }
+.service-row.active:hover { transform: scale(1.02); opacity: 0.78; }
 .service-num {
-  font-family: var(--font-en); font-size: 11px; font-weight: 500;
-  letter-spacing: .18em; color: var(--gold); min-width: 36px; padding-top: 4px;
+  font-family: var(--font-en); font-size: 20px; font-weight: 500;
+  letter-spacing: .18em; color: #076c44; min-width: 36px; padding-top: 4px;
 }
-.service-info h4 { font-family: var(--font-zh); font-size: 15px; font-weight: 400; color: var(--white); margin-bottom: 6px; transition: color 0.3s ease; }
+.service-info h4 { font-family: 'CreamFont','Noto Sans TC',sans-serif; font-size: clamp(15px, 1.4vw, 20px); font-weight: normal; color: var(--white); margin-bottom: 6px; transition: color 0.3s ease; }
 .service-info p { font-family: var(--font-zh); font-size: 12.5px; line-height: 1.8; color: rgba(255,255,255,0.45); }
 .service-row:hover .service-info h4 { color: #C9A96E; }
 .service-row:hover .service-num { color: #C9A96E; }
 a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: flex-start; }
 @media(max-width:900px) { .services-content { grid-template-columns: 1fr; } }
+@media(max-width:768px) { .services-content { padding: 0 20px; } }
 
 /* ── 09 CSR IMPACT ───────────────────────────────────────── */
 #csr-wf { background: var(--white); padding: 120px 0; }
@@ -798,11 +780,11 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 }
 .tl-header { max-width: 1400px; margin: 0 auto 48px; padding: 0 48px; }
 .tl-header-label { font-family: var(--font-en); font-size: 13px; font-weight: 500; letter-spacing: .38em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
-.tl-header h2 { font-family: var(--font-display); font-weight: normal; font-size: clamp(2rem, 3.5vw, 3.2rem); color: #000000; }
+.tl-header h2 { font-family: 'MontserratMedium','CreamFont','Noto Sans TC',sans-serif; font-weight: normal; font-size: clamp(32px, 3.5vw, 45px); color: #000000; }
 .tl-scroll-wrap { overflow-x: auto; overflow-y: visible; cursor: grab; padding: 16px 48px 40px; }
 @media(max-width: 768px) {
   #timeline-wf { height: auto; padding: 56px 0 40px; overflow: hidden; }
-  .tl-header { padding: 0 24px; margin-bottom: 36px; }
+  .tl-header { padding: 0 20px; margin-bottom: 36px; }
   .tl-scroll-wrap {
     padding: 16px 0 32px;
     width: 100%; overflow: hidden !important;
@@ -817,10 +799,38 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 .tl-item { min-width: 280px; padding: 0 40px 0 0; position: relative; }
 .tl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); margin-bottom: 28px; position: relative; z-index: 2; flex-shrink: 0; transition: transform 0.3s ease, box-shadow 0.3s ease; }
 .tl-item:hover .tl-dot { transform: scale(1.6); box-shadow: 0 0 0 4px rgba(201,169,110,0.2); }
-.tl-year { font-family: var(--font-en); font-size: 2rem; font-weight: 200; color: #000000; display: block; margin-bottom: 6px; }
-.tl-phase { font-family: var(--font-en); font-size: 7.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px; }
-.tl-title { font-family: var(--font-zh); font-size: 13px; font-weight: 400; color: rgba(0,0,0,0.85); margin-bottom: 8px; line-height: 1.5; }
-.tl-body { font-family: var(--font-zh); font-size: 11.5px; font-weight: 300; color: rgba(0,0,0,0.38); line-height: 1.8; }
+.tl-year { font-family: 'MontserratThin',sans-serif; font-size: 2rem; font-weight: normal; color: #000000; display: block; margin-bottom: 6px; }
+.tl-phase { font-family: var(--font-en); font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px; }
+.tl-title { font-family: 'MontserratMedium','CreamFont','Noto Sans TC',sans-serif; font-size: 15px; font-weight: normal; color: rgba(0,0,0,0.85); margin-bottom: 4px; line-height: 1.5; }
+.tl-body { font-family: 'MontserratMedium','CreamFont','Noto Sans TC',sans-serif; font-size: 12px; font-weight: normal; color: #696969; line-height: 1.8; }
+#timeline-wf { position: relative; }
+#timeline-wf::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 140px;
+  background: linear-gradient(to right, transparent, #ffffff 80%);
+  pointer-events: none;
+  z-index: 3;
+}
+.tl-scroll-hint {
+  font-family: var(--font-en);
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  padding-bottom: 6px;
+  animation: hint-pulse 2.2s ease-in-out infinite;
+}
+@keyframes hint-pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@media(max-width: 768px) {
+  #timeline-wf::after { display: none; }
+  .tl-scroll-hint { display: none; }
+}
 
 /* ── 11 NEWSLETTER ───────────────────────────────────────── */
 #newsletter-wf {
@@ -830,25 +840,38 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 .nl-bg { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(201,169,110,0.08) 0%, transparent 60%); }
 .nl-inner { max-width: 680px; margin: 0 auto; text-align: center; padding: 0 24px; position: relative; z-index: 2; }
 .nl-label { font-family: var(--font-en); font-size: 13px; font-weight: 500; letter-spacing: .38em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
-.nl-heading { font-family: var(--font-display); font-weight: normal; font-size: clamp(2rem, 3.5vw, 3rem); color: #000000; line-height: 1.3; margin-bottom: 12px; }
+.nl-heading { font-family: 'MontserratMedium','CreamFont','Noto Sans TC',sans-serif; font-weight: normal; font-size: clamp(32px, 3.5vw, 45px); color: #000000; line-height: 1.3; letter-spacing: 0.05em; margin-bottom: 12px; }
 .nl-sub { font-family: 'Montserrat', sans-serif; font-style: normal; font-size: 14px; color: rgba(0,0,0,0.35); margin-bottom: 44px; }
 .nl-form { display: flex; align-items: center; border: 1px solid rgba(0,0,0,0.12); background: rgba(0,0,0,0.04); border-radius: 999px; padding: 5px; }
 .nl-input { flex: 1; min-width: 0; background: transparent; border: none; outline: none; padding: 14px 22px; font-family: var(--font-zh); font-size: 14px; color: #000000; }
 .nl-input::placeholder { color: rgba(0,0,0,0.28); }
-.nl-btn { background: var(--gold); color: var(--white); border: none; padding: 14px 24px; font-family: var(--font-en); font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background 0.3s ease; white-space: nowrap; flex-shrink: 0; border-radius: 999px; }
-.nl-btn:hover { background: #b5893a; }
+.nl-btn { background: var(--gold); color: var(--white); border: none; padding: 0 28px; height: 54px; display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-en); font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background 0.3s ease, transform 0.25s cubic-bezier(.16,1,.3,1), opacity 0.25s ease; white-space: nowrap; flex-shrink: 0; border-radius: 999px; }
+.nl-btn:hover { background: var(--gold); color: var(--white); transform: scale(1.05); opacity: 0.82; }
+.nl-btn:active { background: #000000; color: #fff; transform: none; opacity: 1; }
+@media(max-width:768px) {
+  .nl-inner { padding: 0 20px; }
+}
 @media(max-width:600px) {
   .nl-form { flex-direction: row; }
   .nl-input { padding: 14px 16px; font-size: 13px; }
-  .nl-btn { padding: 14px 20px; width: auto; }
+  .nl-btn { padding: 14px 20px; width: 100%; max-width: 200px; justify-content: flex-start; }
   .nl-inner { padding: 0 20px; }
 }
-.social-row { display: flex; gap: 12px; justify-content: center; margin-top: 40px; flex-wrap: wrap; }
-.social-row .btn-gold { justify-content: center; }
+.social-row { display: flex; gap: 12px; justify-content: center; margin-top: 12px; flex-wrap: wrap; }
+.social-row .btn-gold { justify-content: center; background: transparent; border: 1px solid #C9A96E; }
+.social-row .btn-gold:hover { background: transparent; border-color: #C9A96E; color: inherit; transform: scale(1.05); opacity: 0.82; }
+.social-row .btn-gold:active { background: #000000; border-color: #000000; color: #fff; transform: none; opacity: 1; }
 .social-row .btn-gold img { width: 24px; height: 24px; }
 /* desktop：五顆按鈕固定同一排，列寬以內容為準並對齊頁面中心 */
 @media (min-width: 900px) {
   .social-row { flex-wrap: nowrap; width: max-content; margin-left: 50%; transform: translateX(-50%); }
+}
+/* mobile：一排一個，間距一致 */
+@media (max-width: 899px) {
+  .social-row { flex-direction: column; align-items: center; gap: 12px; margin-top: 12px; }
+  .social-row .nl-btn { width: 100%; max-width: 200px; justify-content: flex-start; padding: 14px 18px 14px 32px; height: auto; }
+  .social-row .btn-gold { width: 100%; max-width: 200px; justify-content: flex-start !important; padding-left: 32px; }
+  .social-row .btn-gold img { margin-left: 0 !important; }
 }
 .social-tag { font-family: var(--font-en); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; padding: 8px 16px; border: 1px solid rgba(0,0,0,0.15); color: rgba(0,0,0,0.45); cursor: pointer; transition: all 0.3s ease; }
 .social-tag:hover { border-color: var(--gold); color: var(--gold); }
@@ -887,12 +910,20 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
               transform 0.25s cubic-bezier(.16,1,.3,1);
   cursor: pointer;
 }
-.btn-gold:hover {
-  background: rgba(201,169,110,0.08);        /* hover 底色染上極淡金 */
-  border-color: rgba(201,169,110,1);         /* 框變實心金 */
-  transform: scale(1.05);                    /* 整顆放大 5% */
-}
+.btn-gold:hover { background: #fff; border-color: rgba(201,169,110,0.65); transform: scale(1.05); opacity: 0.82; }
+.btn-gold:active { background: #000000; border-color: #000000; color: #fff; transform: none; opacity: 1; }
 
+/* 切換簡體：中文改用 SourceHanSerifCN（思源宋體）；英文維持 Montserrat */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] body *{font-family:'Montserrat','SourceHanSerifCN','Noto Sans TC',sans-serif !important}
+/* 簡體時 nav 維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] #top-nav, html[lang="zh-CN"] #top-nav *,
+html[lang="zh-CN"] #mobile-menu, html[lang="zh-CN"] #mobile-menu *{font-family:var(--font-zh) !important}
+html[lang="zh-CN"] #top-nav .lang-switch a, html[lang="zh-CN"] #top-nav .nav-logo span{font-family:var(--font-en) !important}
+/* 簡體時跑馬燈維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] .marquee-track, html[lang="zh-CN"] .marquee-track *{font-family:var(--font-en) !important}
+/* 簡體時年份維持 MontserratThin */
+html[lang="zh-CN"] .tl-year{font-family:'MontserratThin',sans-serif !important}
 </style>
 </head>
 <body>
@@ -900,7 +931,7 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 <!-- ── NAV ─────────────────────────────────────────────────── -->
 <nav id="top-nav">
   <div class="nav-inner">
-    <a href="index-website.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="jpg/logo/LOGO-B.png" alt="KUAN'S LIVING"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span style="display:none">KUAN'S LIVING</span>
@@ -939,17 +970,17 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
           <a href="https://shop.kuansliving.com/" target="_blank">購物網站</a>
         </li>
         <li class="nav-direct">
-          <a href="magazine/index.html" target="_blank">線上雜誌</a>
+          <a href="http://magazine.kuansliving.com/" target="_blank">線上雜誌</a>
         </li>
       </ul>
     </div>
     <div class="nav-right">
       <div class="lang-switch">
-        <a href="#" class="active">繁</a>
+        <a href="#" data-lang="zh-TW" class="active">繁</a>
         <span style="color:rgba(255,255,255,0.2)">|</span>
-        <a href="#">EN</a>
+        <a href="#" data-lang="en">EN</a>
         <span style="color:rgba(255,255,255,0.2)">|</span>
-        <a href="#">簡</a>
+        <a href="#" data-lang="zh-CN">簡</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -989,11 +1020,11 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
     </div>
   </div>
   <a href="https://shop.kuansliving.com/" target="_blank" class="mobile-direct">購物網站</a>
-  <a href="magazine/index.html" target="_blank" class="mobile-direct">線上雜誌</a>
+  <a href="http://magazine.kuansliving.com/" target="_blank" class="mobile-direct">線上雜誌</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--gold)">繁</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:rgba(255,255,255,0.4)">EN</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:rgba(255,255,255,0.4)">簡</a>
+    <a href="#" data-lang="zh-TW" style="font-family:var(--font-en);font-size:13px;color:var(--gold)">繁</a>
+    <a href="#" data-lang="en" style="font-family:var(--font-en);font-size:13px;color:rgba(255,255,255,0.4)">EN</a>
+    <a href="#" data-lang="zh-CN" style="font-family:var(--font-en);font-size:13px;color:rgba(255,255,255,0.4)">簡</a>
   </div>
 </div>
 
@@ -1013,36 +1044,53 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
       <span class="hero-badge-label">Since 1991 · Taipei &amp; Milano</span>
     </div>
     <h1 class="hero-title">
-      <img src="jpg/logo/LOGO-w_ENG.png" alt="KUAN'S LIVING" class="hero-brand-img">
-      <em class="hero-en">Where Eastern Mastery Meets Western Refinement</em>
-      <span class="hero-title-zh">承襲東西文化底蘊</span>
+      <img src="jpg/logo/logo-b_eng.svg" alt="KUAN'S LIVING" class="hero-brand-img">
+      <em class="hero-en">Where Eastern Mastery Meets Western Refinement.</em>
     </h1>
     <div class="hero-cta">
-      <a href="about.html" class="btn-hero btn-fill">品牌故事↗</a>
+      <a href="about.html" class="btn-hero btn-fill">品牌故事 ></a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <span>SCROLL</span>
-    <div class="scroll-line"></div>
-  </div>
+
 </section>
 
 <!-- ── 04 TIMELINE ───────────────────────────────────────────── -->
 <section id="timeline-wf">
   <div class="tl-header">
-    <span class="tl-header-label">Brand Milestones · 重要里程</span>
-    <h2 class="reveal">三十餘年，一針一線</h2>
+    <span class="tl-header-label" style="letter-spacing:2.5px">Brand Milestones · 重要里程</span>
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <h2 class="reveal" style="color:#000000">三十餘年，一針一線</h2>
+      <span class="tl-scroll-hint">Scroll &nbsp;→</span>
+    </div>
   </div>
   <div class="tl-scroll-wrap" id="tlWrapper">
     <div class="tl-track">
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">1991</span><span class="tl-phase">品牌奠基 · Foundation</span><p class="tl-title">陳靜寬女士於台北創立寬庭</p><p class="tl-body">亞洲第一個將高訂工藝導入寢飾的品牌。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2002</span><span class="tl-phase">國際接軌 · Milano</span><p class="tl-title">米蘭分公司 S.r.l. 誕生</p><p class="tl-body">向全球推廣 Bespoke 高級訂製寢飾系列。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2004</span><span class="tl-phase">國際獎項 · Awards</span><p class="tl-title">義大利 Grandesign 大賞</p><p class="tl-body">首度參展巴黎 Maison & Objet Paris。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2012</span><span class="tl-phase">品牌進化 · Evolution</span><p class="tl-title">正式更名「寬庭美學」</p><p class="tl-body">《LIBERTA》百年日報全版報導。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2014</span><span class="tl-phase">文華東方 · Hospitality</span><p class="tl-title">台北文華東方總統套房寢飾</p><p class="tl-body">推出「寬庭囍事」婚慶服務。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2016</span><span class="tl-phase">航空殊榮 · Aviation</span><p class="tl-title">漢堡空品獎最佳機上寢具首獎</p><p class="tl-body">連續兩年獲國際航空業肯定。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2022</span><span class="tl-phase">美學教育 · CSR</span><p class="tl-title">全國第一間美學教學中心</p><p class="tl-body">45 門課程，8,000 人次參與。</p></div>
-      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2025</span><span class="tl-phase">嶄新視野 · New Horizon</span><p class="tl-title">米蘭設計週 · 上海會館落成</p><p class="tl-body">全新高訂系列正式亮相。</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">1991</span><span class="tl-phase">品牌奠基 · Foundation</span><p class="tl-title">陳靜寬女士創立寬庭</p><p class="tl-body">引進法義精品寢飾，拓展亞洲市場</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">1992</span><span class="tl-phase">自有品牌 · House Brand</span><p class="tl-title">於米蘭設計製造自有品牌</p><p class="tl-body">首度將工坊直營概念帶入市場</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">1995</span><span class="tl-phase">高訂寢飾 · Bespoke</span><p class="tl-title">Bespoke 高級訂製寢飾系列</p><p class="tl-body">以高級訂製服概念征服大中華市場</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2000</span><span class="tl-phase">旗艦據點 · Taipei</span><p class="tl-title">台北士林寬庭生活館旗艦店開幕</p><p class="tl-body">品牌旗艦據點正式成立亮相</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2002</span><span class="tl-phase">國際接軌 · MILAN</span><p class="tl-title">米蘭分公司 S.r.l. 誕生</p><p class="tl-body">打造 EMANUEL UNGARO 首個 Home Collection</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2003</span><span class="tl-phase">國際展會 · Paris</span><p class="tl-title">首度亮相巴黎 Maison &amp; Objet</p><p class="tl-body">形象區展出 Ungaro Home Collection</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2004</span><span class="tl-phase">國際獎項 · Awards</span><p class="tl-title">義大利 Grandesign 大賞</p><p class="tl-body">國際設計界的認可及肯定</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2005</span><span class="tl-phase">市場拓展 · China</span><p class="tl-title">上海寬庭會館隆重開幕</p><p class="tl-body">正式跨足中國寢飾市場</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2006</span><span class="tl-phase">市場拓展 · Hong Kong</span><p class="tl-title">進駐香港連卡佛精品百貨</p><p class="tl-body">設立 KUAN'S LIVING 寢具門市</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2007</span><span class="tl-phase">通路進駐 · Beijing</span><p class="tl-title">進駐北京新光天地百貨</p><p class="tl-body">設立寬庭高訂寢飾門市</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2008</span><span class="tl-phase">通路進駐 · Shanghai</span><p class="tl-title">進駐上海恆隆廣場精品區</p><p class="tl-body">設立寬庭高訂寢飾門市</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2011</span><span class="tl-phase">領袖殊榮 · Honor</span><p class="tl-title">陳靜寬董事長獲國際肯定</p><p class="tl-body">獲選世界十大華人創業楷模</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2012</span><span class="tl-phase">公益關懷 · Charity</span><p class="tl-title">攜手陽光基金會織愛工作隊</p><p class="tl-body">提供傷友縫製愛心小抱枕的工作機會，並透過義賣捐款支持公益。</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2013</span><span class="tl-phase">國際報導 · Media</span><p class="tl-title">義大利報紙電視專訪董事長</p><p class="tl-body">電視台「傳奇人物」及《LIBERTA》報社專訪陳靜寬</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2014</span><span class="tl-phase">文華東方 · Hospitality</span><p class="tl-title">台北文華東方總統套房寢飾</p><p class="tl-body">量身訂製總統套房與文華套房寢具</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2014</span><span class="tl-phase">美學教育 · Education</span><p class="tl-title">深入 310 所偏鄉開設美學教室</p><p class="tl-body">以「我的故事我的偶」啟蒙美學教育</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2014</span><span class="tl-phase">品牌拓展 · K'space</span><p class="tl-title">信義誠品旗艦店開幕</p><p class="tl-body">品牌生活概念店進駐信義誠品</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2015</span><span class="tl-phase">進駐航空公司領域 · Airlines</span><p class="tl-title">跨足國際航空寢具領域</p><p class="tl-body">為歐亞多家航空訂製空中寢具</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2016</span><span class="tl-phase">航空用品殊榮 · Airlines</span><p class="tl-title">榮獲國際空品漢堡獎</p><p class="tl-body">奪最佳機上寢具商務／頭等客艙首獎</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2017</span><span class="tl-phase">航空殊榮 · Airlines</span><p class="tl-title">再獲國際空品漢堡獎</p><p class="tl-body">以牡蠣殼砂環保毛毯獲創新獎</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2018</span><span class="tl-phase">五感體驗 · Lifestyle</span><p class="tl-title">About KUAN &amp; Café 開幕</p><p class="tl-body">陸續進駐誠品與大立精品</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2019</span><span class="tl-phase">旅行體驗 · Travel</span><p class="tl-title">Beyond Travel 跟著寬庭去旅行</p><p class="tl-body">首發緬甸伊洛瓦底江河輪之旅</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2021</span><span class="tl-phase">美學教育 · Education</span><p class="tl-title">學生製作邊布口罩防疫</p><p class="tl-body">與北市教育局合辦布禮物活動</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2022</span><span class="tl-phase">美學教育 · CSR</span><p class="tl-title">全國第一間美學教學中心</p><p class="tl-body">45 門課程，8,000 人次參與</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2024</span><span class="tl-phase">增加國際高級訂製市場能見度 · Bespoke Online</span><p class="tl-title">英文高訂官網正式上線</p><p class="tl-body">高訂系列邁入科技新階段</p></div>
+      <div class="tl-item"><div class="tl-dot"></div><span class="tl-year">2025</span><span class="tl-phase">嶄新視野 · New Horizon</span><p class="tl-title">米蘭設計週邀請進駐 在 Via Venezia 6 人文及國際精品的薈萃之地</p><p class="tl-body">與 TURCO DESIGN 攜手呈獻高級訂製居家系列</p></div>
     </div>
   </div>
 </section>
@@ -1075,9 +1123,9 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
     <div class="services-bg"></div>
     <div class="services-content">
       <div class="services-left">
-        <span class="services-eyebrow">Corporate Services · 企業合作</span>
-        <h2 class="services-title">Where<br>Artistry<br>Meets<br>Excellence</h2>
-        <p class="services-sub">三十餘年深耕高端市場，為國際頂尖合作夥伴提供專屬定製服務。</p>
+        <span class="services-eyebrow reveal-left" style="letter-spacing:2.5px">Corporate Services · 企業合作</span>
+        <h2 class="services-title reveal-left reveal-delay-1">Where<br>Artistry<br>Meets<br>Excellence</h2>
+        <p class="services-sub reveal reveal-delay-2">三十餘年深耕高端市場，為國際頂尖合作夥伴提供專屬定製服務。</p>
       </div>
       <div class="services-right" id="serviceRows">
         <a href="services-hotel.html" class="service-row">
@@ -1139,19 +1187,14 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 <section id="newsletter-wf">
   <div class="nl-bg"></div>
   <div class="nl-inner">
-    <span class="nl-label">Stay in Touch · 訂閱電子報</span>
-    <h2 class="nl-heading reveal">接收寬庭最新<br>美學企劃與優惠</h2>
+    <h2 class="nl-heading reveal" style="color:#000000">搶先探索新系列與專屬活動</h2>
     <p class="nl-sub reveal reveal-delay-1">Be the first to discover new collections and exclusive events.</p>
-    <div class="nl-form reveal reveal-delay-2">
-      <input class="nl-input" type="email" placeholder="請輸入您的電子信箱 / Your email">
-      <button class="nl-btn">訂閱</button>
-    </div>
     <div class="social-row">
-      <a href="https://www.facebook.com/kuansliving/" target="_blank" class="btn-gold" style="font-size:12px;justify-content:space-between"><img src="jpg/icon/01_icon_facebook.png" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">Facebook</a>
-      <a href="https://kuans.co/WDDI9" target="_blank" class="btn-gold" style="font-size:12px;justify-content:space-between"><img src="jpg/icon/02_icon_instagram.png" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">Instagram</a>
-      <a href="https://kuans.co/QBei1" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start"><img src="jpg/icon/03_icon_line.png" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">LINE</a>
-      <a href="https://mp.weixin.qq.com/s/J_KcGJLa3XKQF3dszxRbHw" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start;text-transform:none"><img src="jpg/icon/04_icon_Wechat.png" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">WeChat</a>
-      <a href="https://shop.kuansliving.com/" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start"><img src="jpg/icon/05_icon_shopstore.png" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">購物網站</a>
+      <a href="https://page.line.me/znm9354p?openQrModal=true&utm_source=web" target="_blank" class="nl-btn reveal reveal-delay-2"><img src="jpg/icon/03_icon_line.svg" alt="" style="width:24px;height:24px;margin-right:8px">加入官方LINE</a>
+      <a href="https://www.facebook.com/kuansliving/" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start"><img src="jpg/icon/01_icon_facebook.svg" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">Facebook</a>
+      <a href="https://kuans.co/WDDI9" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start"><img src="jpg/icon/02_icon_instagram.svg" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">Instagram</a>
+      <a href="https://mp.weixin.qq.com/s/J_KcGJLa3XKQF3dszxRbHw" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start;text-transform:none"><img src="jpg/icon/04_icon_Wechat.svg" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">WeChat</a>
+      <a href="https://shop.kuansliving.com/" target="_blank" class="btn-gold" style="font-size:12px;justify-content:flex-start"><img src="jpg/icon/05_icon_shopstore.svg" alt="" width="24" height="24" style="margin-left:-10px;width:24px;height:24px">購物網站</a>
     </div>
   </div>
 </section>
@@ -1160,7 +1203,7 @@ a.service-row { text-decoration: none; display: flex; gap: 20px; align-items: fl
 <footer id="footer">
   <div class="footer-top">
     <div>
-      <div class="footer-logo">KUAN'S LIVING</div>
+      <div class="footer-logo"><img src="jpg/logo/LOGO-w.png" alt="KUAN'S LIVING" style="height:15px;width:auto;display:block;margin-bottom:4px"></div>
       <div class="footer-tag">Where Eastern Mastery<br>Meets Western Refinement.<br><br>寬庭美學股份有限公司<br>Est. 1991 · Taipei & Milano</div>
     </div>
     <div class="footer-nav">
@@ -1430,16 +1473,21 @@ const tlTrack   = tlWrapper ? tlWrapper.querySelector('.tl-track') : null;
 let tlScrolling = true, tlHovered = false, tlDragging = false, tlDragX, tlDragLeft;
 let tlPos = 0; // for mobile transform
 
+// Mobile：複製一份讓 loop 無縫
+if (tlTrack && window.innerWidth <= 768) {
+  tlTrack.innerHTML += tlTrack.innerHTML;
+}
+
 function isMobile() { return window.innerWidth <= 768; }
 
 function tlAnimate() {
   if (tlScrolling && !tlHovered && !tlDragging && tlWrapper) {
     if (isMobile() && tlTrack) {
-      // Mobile / iOS Safari：transform 方式（iOS scrollLeft 無法程式控制）
-      const maxPos = tlTrack.scrollWidth - tlWrapper.clientWidth;
-      if (maxPos > 0) {
+      // Mobile / iOS Safari：transform 方式，loop at half width
+      const halfW = tlTrack.scrollWidth / 2;
+      if (halfW > 0) {
         tlPos += SCROLL_SPEED;
-        if (tlPos >= maxPos) tlPos = 0;
+        if (tlPos >= halfW) tlPos = 0;
         tlTrack.style.webkitTransform = 'translateX(-' + tlPos + 'px)';
         tlTrack.style.transform       = 'translateX(-' + tlPos + 'px)';
       }
@@ -1591,6 +1639,74 @@ if (tlWrapper) {
     });
   });
 }
+
+// ── 多語系切換 (繁/簡) ─────────────────────────────────────
+(function() {
+  const TC2SC = {
+    '寬':'宽','餘':'余','場':'场','義':'义','寢':'寝','飾':'饰',
+    '織':'织','藝':'艺','裝':'装','極':'极','學':'学','關':'关',
+    '於':'于','體':'体','驗':'验','間':'间','責':'责','務':'务',
+    '據':'据','點':'点','選':'选','臥':'卧','購':'购','網':'网',
+    '線':'线','雜':'杂','誌':'志','襲':'袭','東':'东','蘊':'蕴',
+    '針':'针','陳':'陈','靜':'静','創':'创','個':'个','將':'将',
+    '訂':'订','導':'导','國':'国','際':'际','軌':'轨','蘭':'兰',
+    '誕':'诞','廣':'广','級':'级','製':'制','賞':'赏','參':'参',
+    '報':'报','華':'华','總':'总','統':'统','慶':'庆','漢':'汉',
+    '獎':'奖','機':'机','連':'连','兩':'两','獲':'获','課':'课',
+    '與':'与','嶄':'崭','視':'视','設':'设','週':'周','會':'会',
+    '館':'馆','資':'资','跡':'迹','業':'业','頂':'顶','夥':'伙',
+    '專':'专','屬':'属','誠':'诚','榮':'荣','頭':'头','艙':'舱',
+    '禮':'礼','顯':'显','顧':'顾','畫':'画','劃':'划','優':'优',
+    '帳':'账','號':'号','為':'为','來':'来','長':'长','實':'实',
+    '後':'后','過':'过','發':'发','還':'还','從':'从','說':'说',
+    '們':'们','進':'进','聯':'联','數':'数','樣':'样','標':'标',
+    '節':'节','時':'时','動':'动','開':'开','對':'对'
+  };
+
+  const nodeMap = new Map();
+
+  function collectNodes(el) {
+    if (el.nodeType === 3) {
+      if (el.nodeValue.trim()) nodeMap.set(el, el.nodeValue);
+    } else if (el.nodeType === 1 &&
+        !['SCRIPT','STYLE','META','LINK','NOSCRIPT'].includes(el.tagName)) {
+      el.childNodes.forEach(collectNodes);
+    }
+  }
+
+  function applyLang(lang) {
+    const sc = lang === 'zh-CN';
+    nodeMap.forEach((orig, n) => {
+      n.nodeValue = sc ? orig.replace(/./g, c => TC2SC[c] || c) : orig;
+    });
+    document.documentElement.lang = sc ? 'zh-CN' : 'zh-TW';
+    document.querySelectorAll('.hero-title-zh, .tl-header h2, .nl-heading').forEach(el => {
+      el.style.fontFamily = sc ? "'MontserratMedium','SourceHanSerifCN','Noto Sans TC',sans-serif"
+                               : "'MontserratMedium','CreamFont','Noto Sans TC',sans-serif";
+    });
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.dataset.lang === lang;
+      if (el.closest('.lang-switch')) {
+        el.classList.toggle('active', active);
+      } else {
+        el.style.color = active ? 'var(--gold)' : 'rgba(255,255,255,0.4)';
+      }
+    });
+    localStorage.setItem('kl-lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    collectNodes(document.body);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        applyLang(el.dataset.lang);
+      });
+    });
+    const stored = localStorage.getItem('kl-lang');
+    if (stored && stored !== 'zh-TW') applyLang(stored);
+  });
+})();
 
 // ── Hero 滑鼠視差 — Digitize 風格 ────────────────────────
 (function() {
