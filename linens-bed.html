@@ -34,7 +34,7 @@
           "@type": "ListItem",
           "position": 1,
           "name": "首頁",
-          "item": "https://www.kuansliving.com/index-website.html"
+          "item": "https://www.kuansliving.com/index.html"
         },
         {
           "@type": "ListItem",
@@ -51,7 +51,9 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}@font-face{font-family:'CreamFontOTF';src:url('font/creamfont-3.1.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}@font-face{font-family:'MontserratMedium';src:url('font/Montserrat-Medium.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF;}
+
+@font-face{font-family:'SourceHanSerifCN';src:url('font/SourceHanSerifCN-Medium.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;color:#2A2A2A;background:#fff;overflow-x:hidden}
@@ -94,21 +96,21 @@ img{display:block;width:100%;object-fit:cover}
 .page-hero.dark .breadcrumb:hover{color:var(--gold)}
 .label-en{font-family:var(--font-en);font-size:10px;font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
 .page-hero.dark .label-en{color:var(--gold)}
-.page-hero h1{font-family:'CreamFont',var(--font-zh);font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.25;color:var(--dark);margin-bottom:12px}
+.page-hero h1{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(2rem,4vw,47px);letter-spacing:0.05em;line-height:1.25;color:var(--dark);margin-bottom:12px}
 .page-hero.dark h1{color:var(--white)}
 .page-sub{font-family:var(--font-en);font-style:italic;font-size:clamp(.95rem,1.5vw,1.2rem);font-weight:300;color:var(--stone);letter-spacing:.04em}
 .page-hero.dark .page-sub{color:rgba(255,255,255,0.4)}
 /* ── CONTENT ── */
 .page-main{padding:80px 0 20px}
 .content-block{margin-bottom:80px}
-.content-block h2{font-weight:300;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:var(--dark)}
+.content-block h2{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:#696969}
 .content-block p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:16px}
 .grid-2c{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .grid-3c{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .grid-4c{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 @media(max-width:900px){.grid-2c,.grid-3c{grid-template-columns:1fr}.grid-4c{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.grid-4c{grid-template-columns:1fr}}
-.card{background:var(--cream);padding:36px;border:1px solid var(--mist)}
+.card{background:var(--cream);padding:36px;border:1px solid var(--mist);transition:background 0.3s ease,border-color 0.3s ease}.card:hover{background:#DCDCDC;border-color:rgba(201,169,110,0.4)}
 .card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--dark)}
 .card p{font-size:13.5px;line-height:1.9;color:var(--mid)}
 .card .en{font-family:var(--font-en);font-size:9px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;display:block}
@@ -143,6 +145,14 @@ img{display:block;width:100%;object-fit:cover}
   border-color: rgba(201,169,110,1);         /* 框變實心金 */
   transform: scale(1.05);                    /* 整顆放大 5% */
 }
+/* 與 services-hotel 相同的按鈕 */
+.btn-visit {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-en); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: #fff; background: #111; border-radius: 100px; padding: 13px 32px;
+  transition: background .25s ease, color .25s ease;
+}
+.btn-visit:hover { background: var(--gold); color: #fff; }
 .btn-outline{border:1px solid var(--accent);color:var(--accent)}
 .btn-outline:hover{background:var(--accent);color:#fff}
 .btn-dark{background:var(--dark);color:#fff}
@@ -367,12 +377,38 @@ img{display:block;width:100%;object-fit:cover}
   .bed-block2 .bed-right-slider { order: -1; }
 }
 
+/* ── Elyse Split Layout (lb-) ── */
+.page-main.lb-split-main { padding: 0; }
+.lb-split     { display: grid; grid-template-columns: 62% 38%; min-height: 100vh; }
+.lb-split-rev { display: grid; grid-template-columns: 38% 62%; min-height: 100vh; }
+.lb-img-panel { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.lb-img-panel .bed-left-slider,
+.lb-img-panel .bed-right-slider { height: 100%; background: #0D0D0D; }
+.lb-content-panel { background: #FFFFFF; padding: 64px 52px 100px; color: var(--dark); }
+.lb-brand-label { color: rgba(0,0,0,0.35); font-family: var(--font-en); font-size: 10px; letter-spacing: .38em; text-transform: uppercase; display: block; margin-bottom: 20px; }
+.lb-rule { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin-bottom: 44px; }
+.lb-content-panel h1 { font-family: 'CreamFont',sans-serif; font-weight: 400; font-size: clamp(1.8rem, 2.8vw, 3rem); color: var(--dark); line-height: 1.3; margin-bottom: 28px; }
+.lb-body { font-size: 15px; line-height: 2; color: rgba(0,0,0,0.55); margin-bottom: 28px; }
+.lb-btn-row { margin-top: 8px; }
+@media(max-width:900px) {
+  .lb-split, .lb-split-rev { grid-template-columns: 1fr; }
+  .lb-img-panel { position: relative; height: 60vw; }
+  .lb-content-panel { padding: 40px 24px 60px; }
+  .lb-split-rev .lb-img-panel { order: -1; }
+}
+/* 切換簡體：中文改用 SourceHanSerifCN（思源宋體）；英文維持 Montserrat */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] body *{font-family:'Montserrat','SourceHanSerifCN','Noto Sans TC',sans-serif !important}
+/* 簡體時 nav 維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] #top-nav, html[lang="zh-CN"] #top-nav *,
+html[lang="zh-CN"] #mobile-menu, html[lang="zh-CN"] #mobile-menu *{font-family:var(--font-zh) !important}
+html[lang="zh-CN"] #top-nav .lang-switch a, html[lang="zh-CN"] #top-nav .nav-logo span{font-family:var(--font-en) !important}
 </style>
 </head>
 <body>
 <nav id="top-nav">
   <div class="nav-inner">
-    <a href="index-website.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="jpg/logo/LOGO-B.png" alt="KUAN'S LIVING"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span style="display:none">KUAN'S LIVING</span>
@@ -410,16 +446,16 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://shop.kuansliving.com" target="_blank">購物網站</a>
       </li>
       <li class="nav-direct">
-        <a href="magazine/index.html" target="_blank">線上雜誌</a>
+        <a href="http://magazine.kuansliving.com/" target="_blank">線上雜誌</a>
       </li>
     </ul>
     <div class="nav-right">
       <div class="lang-switch">
-        <a href="#" class="active">繁</a>
+        <a href="#" class="active" data-lang="zh-TW">繁</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">EN</a>
+        <a href="#" data-lang="en">EN</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">簡</a>
+        <a href="#" data-lang="zh-CN">簡</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -463,28 +499,18 @@ img{display:block;width:100%;object-fit:cover}
     </div>
   </div>
   <a href="https://shop.kuansliving.com" target="_blank" class="mobile-direct">購物網站</a>
-  <a href="magazine/index.html" target="_blank" class="mobile-direct">線上雜誌</a>
+  <a href="http://magazine.kuansliving.com/" target="_blank" class="mobile-direct">線上雜誌</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
+    <a href="#" data-lang="zh-TW" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
+    <a href="#" data-lang="en" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
+    <a href="#" data-lang="zh-CN" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
   </div>
 </div>
-<section class="page-hero white">
-  <div class="container">
-    <a href="index-website.html" class="breadcrumb">← 首頁 Home</a>
-    <span class="label-en" style="font-size:clamp(12px,1.2vw,13px);">Exquisite Linens · 臥室</span>
-    <h1>極致織藝｜臥室</h1>
-    <p class="page-sub" style="font-style:normal;font-size:clamp(16px,2vw,20px);">Explore the Exquisite Ways of Bedroom Linens</p>
-  </div>
-</section>
-<main class="page-main">
-  <div class="container">
-
-    <div class="content-block grid-2c">
+<main class="page-main lb-split-main">
+  <div class="lb-split">
+    <div class="lb-img-panel">
       <div class="bed-left-slider">
         <div class="bed-slider-track" id="bedTrack">
-          <div class="bed-slide"><img src="jpg/linens-bed/01_linens-1-1024x552.jpg" alt="臥室系列 1" onerror="this.parentElement.style.background='#d4c8bc'"></div>
           <div class="bed-slide"><img src="jpg/linens-bed/02_KUN天籟400T-Percale(白繡白).jpg" alt="臥室系列 2" onerror="this.parentElement.style.background='#c8bdb0'"></div>
           <div class="bed-slide"><img src="jpg/linens-bed/03_169_蕭邦.jpg" alt="臥室系列 3" onerror="this.parentElement.style.background='#bfb4a8'"></div>
           <div class="bed-slide"><img src="jpg/linens-bed/04_KUN璀璨600T白.jpg" alt="臥室系列 4" onerror="this.parentElement.style.background='#d4c8bc'"></div>
@@ -492,47 +518,48 @@ img{display:block;width:100%;object-fit:cover}
         </div>
         <button class="bed-arrow bed-arrow-prev" onclick="bedSlide(-1)" aria-label="上一張">←</button>
         <button class="bed-arrow bed-arrow-next" onclick="bedSlide(1)" aria-label="下一張">→</button>
-        <div class="bed-counter"><em id="bedCurrent">1</em> / 5</div>
-      </div>
-      <div>
-        <h2>寢飾床品</h2>
-        <p>義大利國寶級手工結合精密科技，將博物館級典藏化為日常奢華寢飾。頂級訂製體驗 Bespoke 系列甄選 100% 義大利埃及 Giza 超長纖棉，以蕾絲、緹花與刺繡成就專屬睡眠美學。輕鬆日常護理 EASY CARE 設計支援機洗、低溫烘乾與熨燙，細膩工藝融入生活無負擔。</p>
-        <div class="btn-row"><a href="https://shop.kuansliving.com/v2/official/SalePageCategory/325692?sortMode=Sales" target="_blank" class="btn-gold">探索更多 →</a></div>
+        <div class="bed-counter"><em id="bedCurrent">1</em> / 4</div>
       </div>
     </div>
-
+    <div class="lb-content-panel">
+      <span class="lb-brand-label">Exquisite Linens · 極致織藝｜臥室</span>
+      <hr class="lb-rule">
+      <h1>寢飾床品</h1>
+      <p class="lb-body">義大利國寶級手工結合精密科技，將博物館級典藏化為日常奢華寢飾。頂級訂製體驗 Bespoke 系列甄選 100% 義大利埃及 Giza 超長纖棉，以蕾絲、緹花與刺繡成就專屬睡眠美學。輕鬆日常護理 EASY CARE 設計支援機洗、低溫烘乾與熨燙，細膩工藝融入生活無負擔。</p>
+      <div class="lb-btn-row"><a href="https://shop.kuansliving.com/v2/official/SalePageCategory/325692?sortMode=Sales" target="_blank" class="btn-visit">探索更多 →</a></div>
+    </div>
+  </div>
+  <div class="lb-split-rev">
+    <div class="lb-content-panel">
+      <span class="lb-brand-label">Exquisite Linens · 極致織藝｜臥室</span>
+      <hr class="lb-rule">
+      <h1>寢被枕飾</h1>
+      <p class="lb-body">頂級羽絨被芯涵蓋冰島雁鴨絨被、歐洲大白鵝羽絨被與蠶絲夏被，對應四季需求，每夜皆有最適溫度。多元枕頭系列蓬鬆羽絨枕、功能支撐枕芯與記憶枕頭三大系列，貼合不同睡姿與曲線，全面守護頸部舒適。被枕同等哲學，寬庭主張被子與枕頭相輔相成，以完整寢具系統成就每一夜深層好眠。</p>
+      <div class="lb-btn-row"><a href="https://shop.kuansliving.com/v2/official/SalePageCategory/377285?sortMode=Sales" target="_blank" class="btn-visit">探索更多 →</a></div>
+    </div>
+    <div class="lb-img-panel">
+      <div class="bed-right-slider">
+        <div class="bed-slider-track" id="bedTrack2">
+          <div class="bed-slide"><img src="jpg/linens-bed/06_20160129-DSCF0009-scaled.jpg" alt="寢被枕飾 1" onerror="this.parentElement.style.background='#d4c8bc'"></div>
+          <div class="bed-slide"><img src="jpg/linens-bed/07_Comforter1.jpg" alt="寢被枕飾 2" onerror="this.parentElement.style.background='#c8bdb0'"></div>
+          <div class="bed-slide"><img src="jpg/linens-bed/08_TR典鑽-白鵝絨被.jpg" alt="寢被枕飾 3" onerror="this.parentElement.style.background='#bfb4a8'"></div>
+          <div class="bed-slide"><img src="jpg/linens-bed/09_LS-純長纖-蠶絲冬被.jpg" alt="寢被枕飾 4" onerror="this.parentElement.style.background='#d4c8bc'"></div>
+          <div class="bed-slide"><img src="jpg/linens-bed/10_TR鉑鑽-白鵝絨被s-scaled.jpg" alt="寢被枕飾 5" onerror="this.parentElement.style.background='#c8bdb0'"></div>
+          <div class="bed-slide"><img src="jpg/linens-bed/11_野生雁鴨絨.jpg" alt="寢被枕飾 6" onerror="this.parentElement.style.background='#bfb4a8'"></div>
+        </div>
+        <button class="bed-arrow bed-arrow-prev" onclick="bedSlide2(-1)" aria-label="上一張">←</button>
+        <button class="bed-arrow bed-arrow-next" onclick="bedSlide2(1)" aria-label="下一張">→</button>
+        <div class="bed-counter"><em id="bedCurrent2">1</em> / 6</div>
+      </div>
+    </div>
   </div>
 </main>
-
-<div class="container">
-  <div class="section-divider"></div>
-  <div class="content-block grid-2c bed-block2">
-    <div>
-      <h2>寢被枕飾</h2>
-      <p>頂級羽絨被芯涵蓋冰島雁鴨絨被、歐洲大白鵝羽絨被與蠶絲夏被，對應四季需求，每夜皆有最適溫度。多元枕頭系列蓬鬆羽絨枕、功能支撐枕芯與記憶枕頭三大系列，貼合不同睡姿與曲線，全面守護頸部舒適。被枕同等哲學 寬庭主張被子與枕頭相輔相成，以完整寢具系統成就每一夜深層好眠。</p>
-      <div class="btn-row"><a href="https://shop.kuansliving.com/v2/official/SalePageCategory/377285?sortMode=Sales" target="_blank" class="btn-gold">探索更多 →</a></div>
-    </div>
-    <div class="bed-right-slider">
-      <div class="bed-slider-track" id="bedTrack2">
-        <div class="bed-slide"><img src="jpg/linens-bed/06_20160129-DSCF0009-scaled.jpg" alt="寢被枕飾 1" onerror="this.parentElement.style.background='#d4c8bc'"></div>
-        <div class="bed-slide"><img src="jpg/linens-bed/07_Comforter1.jpg" alt="寢被枕飾 2" onerror="this.parentElement.style.background='#c8bdb0'"></div>
-        <div class="bed-slide"><img src="jpg/linens-bed/08_TR典鑽-白鵝絨被.jpg" alt="寢被枕飾 3" onerror="this.parentElement.style.background='#bfb4a8'"></div>
-        <div class="bed-slide"><img src="jpg/linens-bed/09_LS-純長纖-蠶絲冬被.jpg" alt="寢被枕飾 4" onerror="this.parentElement.style.background='#d4c8bc'"></div>
-        <div class="bed-slide"><img src="jpg/linens-bed/10_TR鉑鑽-白鵝絨被s-scaled.jpg" alt="寢被枕飾 5" onerror="this.parentElement.style.background='#c8bdb0'"></div>
-        <div class="bed-slide"><img src="jpg/linens-bed/11_野生雁鴨絨.jpg" alt="寢被枕飾 6" onerror="this.parentElement.style.background='#bfb4a8'"></div>
-      </div>
-      <button class="bed-arrow bed-arrow-prev" onclick="bedSlide2(-1)" aria-label="上一張">←</button>
-      <button class="bed-arrow bed-arrow-next" onclick="bedSlide2(1)" aria-label="下一張">→</button>
-      <div class="bed-counter"><em id="bedCurrent2">1</em> / 6</div>
-    </div>
-  </div>
-</div>
 
 <footer id="footer">
   <div class="container">
     <div class="footer-top">
       <div>
-        <div class="footer-logo">KUAN'S LIVING</div>
+        <div class="footer-logo"><img src="jpg/logo/LOGO-w.png" alt="KUAN'S LIVING" style="height:15px;width:auto;display:block;margin-bottom:4px"></div>
         <div class="footer-tag">Where Eastern Mastery<br>Meets Western Refinement.<br><br>寬庭美學股份有限公司<br>Est. 1991 · Taipei &amp; Milano</div>
       </div>
       <div class="footer-nav">
@@ -548,12 +575,97 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://www.facebook.com/kuansliving/" target="_blank">Facebook</a>
         <a href="https://kuans.co/WDDI9" target="_blank">Instagram</a>
         <a href="https://kuans.co/QBei1" target="_blank">LINE</a>
-        <a href="https://kuans.co/AMgzq" target="_blank">立即購物</a>
       </div>
     </div>
   </div>
 </footer>
 <script>
+
+// ── Language switch ──────────────────────────────────────────
+(function() {
+  const TC2SC = {
+    '寬':'宽','餘':'余','場':'场','義':'义','寢':'寝','飾':'饰',
+    '織':'织','藝':'艺','裝':'装','極':'极','學':'学','關':'关',
+    '於':'于','體':'体','驗':'验','間':'间','責':'责','務':'务',
+    '據':'据','點':'点','選':'选','臥':'卧','購':'购','網':'网',
+    '線':'线','雜':'杂','誌':'志','襲':'袭','東':'东','蘊':'蕴',
+    '針':'针','陳':'陈','靜':'静','創':'创','個':'个','將':'将',
+    '訂':'订','導':'导','國':'国','際':'际','軌':'轨','蘭':'兰',
+    '誕':'诞','廣':'广','級':'级','製':'制','賞':'赏','參':'参',
+    '報':'报','華':'华','總':'总','統':'统','慶':'庆','漢':'汉',
+    '獎':'奖','機':'机','連':'连','兩':'两','獲':'获','課':'课',
+    '與':'与','嶄':'崭','視':'视','設':'设','週':'周','會':'会',
+    '館':'馆','資':'资','跡':'迹','業':'业','頂':'顶','夥':'伙',
+    '專':'专','屬':'属','誠':'诚','榮':'荣','頭':'头','艙':'舱',
+    '禮':'礼','顯':'显','顧':'顾','畫':'画','劃':'划','優':'优',
+    '帳':'账','號':'号','為':'为','來':'来','長':'长','實':'实',
+    '後':'后','過':'过','發':'发','還':'还','從':'从','說':'说',
+    '們':'们','進':'进','聯':'联','數':'数','樣':'样','標':'标',
+    '節':'节','時':'时','動':'动','開':'开','對':'对',
+    '門':'门','贈':'赠','軟':'软','遠':'远','璽':'玺',
+    '啟':'启','風':'风','復':'复','興':'兴','傳':'传',
+    '鳳':'凤','豐':'丰','讓':'让','轉':'转','覺':'觉',
+    '覽':'览','築':'筑','謝':'谢','調':'调','質':'质',
+    '費':'费','賣':'卖','請':'请','語':'语','話':'话',
+    '試':'试','緻':'致','綿':'绵','純':'纯','絨':'绒',
+    '織':'织','緞':'缎','縫':'缝','綴':'缀','邊':'边',
+    '親':'亲','觸':'触','細':'细','軟':'软','輕':'轻',
+    '暖':'暖','舒':'舒','適':'适','彈':'弹','薄':'薄',
+    '厚':'厚','枕':'枕','被':'被','墊':'垫','套':'套',
+    '組':'组','件':'件','床':'床','鋪':'铺','蓋':'盖',
+    '寶':'宝','結':'结','纖':'纤','絲':'丝','緹':'缇',
+    '繡':'绣','鬆':'松','護':'护','計':'计','溫':'温',
+    '燙':'烫','膩':'腻','負':'负','擔':'担','無':'无',
+    '島':'岛','鴨':'鸭','歐':'欧','鵝':'鹅','蠶':'蚕',
+    '應':'应','撐':'撑','記':'记','憶':'忆','貼':'贴',
+    '頸':'颈','張':'张','層':'层','輔':'辅',
+    '韻':'韵','麗':'丽','靈':'灵','纏':'缠','繪':'绘',
+    '縷':'缕','緣':'缘','潔':'洁','續':'续','緩':'缓',
+    '縮':'缩','繞':'绕','締':'缔','維':'维','紡':'纺',
+    '羅':'罗','錦':'锦','綾':'绫','絹':'绢','換':'换',
+    '歡':'欢','劑':'剂','濕':'湿','潤':'润','熱':'热',
+    '壓':'压','縣':'县','鄉':'乡','鎮':'镇','區':'区',
+    '倉':'仓','庫':'库','臺':'台','灣':'湾','館':'馆',
+    '乾':'干','濕':'湿','潤':'润'
+  };
+  const nodeMap = new Map();
+  function collectNodes(el) {
+    if (el.nodeType === 3) {
+      if (el.nodeValue.trim()) nodeMap.set(el, el.nodeValue);
+    } else if (el.nodeType === 1 &&
+        !['SCRIPT','STYLE','META','LINK','NOSCRIPT'].includes(el.tagName)) {
+      el.childNodes.forEach(collectNodes);
+    }
+  }
+  function applyLang(lang) {
+    const sc = lang === 'zh-CN';
+    nodeMap.forEach((orig, n) => {
+      n.nodeValue = sc ? orig.replace(/./g, c => TC2SC[c] || c) : orig;
+    });
+    document.documentElement.lang = sc ? 'zh-CN' : 'zh-TW';
+    document.querySelectorAll('.page-hero h1, .content-block h2').forEach(el => {
+      el.style.fontFamily = sc ? "'MontserratMedium','SourceHanSerifCN','Noto Sans TC',sans-serif"
+                               : "'MontserratMedium','CreamFont','Noto Sans TC',sans-serif";
+    });
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.dataset.lang === lang;
+      if (el.closest('.lang-switch')) {
+        el.classList.toggle('active', active);
+      } else {
+        el.style.color = active ? 'var(--accent)' : 'rgba(255,255,255,0.4)';
+      }
+    });
+    localStorage.setItem('kl-lang', lang);
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    collectNodes(document.body);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); applyLang(el.dataset.lang); });
+    });
+    const stored = localStorage.getItem('kl-lang');
+    if (stored && stored !== 'zh-TW') applyLang(stored);
+  });
+})();
 
 // ── Mobile menu ──────────────────────────────────────────────
 function toggleMenu() {
@@ -582,8 +694,16 @@ function toggleMobileItem(header) {
     var cur = document.getElementById('bedCurrent2');
     if (cur) cur.textContent = idx + 1;
   }
+  function updateArrows2() {
+    var prev = document.querySelector('.bed-right-slider .bed-arrow-prev');
+    var next = document.querySelector('.bed-right-slider .bed-arrow-next');
+    if (prev) prev.style.opacity = idx === 0 ? '0' : '1';
+    if (next) next.style.opacity = idx === total - 1 ? '0' : '1';
+  }
+  var _update2 = update;
+  update = function() { _update2(); updateArrows2(); };
   window.bedSlide2 = function(dir) {
-    idx = (idx + dir + total) % total;
+    idx = Math.max(0, Math.min(total - 1, idx + dir));
     update();
   };
   document.addEventListener('DOMContentLoaded', function() {
@@ -600,7 +720,7 @@ function toggleMobileItem(header) {
 
 // ── Bed Left Slider ──
 (function() {
-  var idx = 0, total = 5;
+  var idx = 0, total = 4;
   function update() {
     var t = document.getElementById('bedTrack');
     if (!t) return;
@@ -608,8 +728,16 @@ function toggleMobileItem(header) {
     var cur = document.getElementById('bedCurrent');
     if (cur) cur.textContent = idx + 1;
   }
+  function updateArrows() {
+    var prev = document.querySelector('.bed-left-slider .bed-arrow-prev');
+    var next = document.querySelector('.bed-left-slider .bed-arrow-next');
+    if (prev) prev.style.opacity = idx === 0 ? '0' : '1';
+    if (next) next.style.opacity = idx === total - 1 ? '0' : '1';
+  }
+  var _update = update;
+  update = function() { _update(); updateArrows(); };
   window.bedSlide = function(dir) {
-    idx = (idx + dir + total) % total;
+    idx = Math.max(0, Math.min(total - 1, idx + dir));
     update();
   };
   document.addEventListener('DOMContentLoaded', function() {

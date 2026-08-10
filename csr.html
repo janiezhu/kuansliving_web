@@ -34,7 +34,7 @@
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index-website.html"},
+          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index.html"},
           {"@type": "ListItem", "position": 2, "name": "企業社會責任", "item": "https://www.kuansliving.com/csr.html"}
         ]
       }
@@ -46,7 +46,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}
-.page-hero h1{font-family:'CreamFont',serif;}
+
+@font-face{font-family:'MontserratMedium';src:url('font/Montserrat-Medium.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF;}
+@font-face{font-family:'SourceHanSerifCN';src:url('font/SourceHanSerifCN-Medium.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;color:#2A2A2A;background:#fff;overflow-x:hidden}
@@ -54,7 +56,7 @@ a{text-decoration:none;color:inherit}
 img{display:block;width:100%;object-fit:cover}
 :root{--green:#076C44;--green-dark:#054F32;--green-xl:#E8F2EC;--white:#fff;--cream:#F8F6F2;--mist:#D4DDE1;--stone:#9CA0AE;--gold:#C9A96E;--accent:#C9A96E;--dark:#0D0D0D;--mid:#4A4A4A;--font-en:'Montserrat',sans-serif;--font-zh:'Noto Sans TC',sans-serif;--ease:cubic-bezier(.25,.46,.45,.94);--trans:0.3s var(--ease)}
 .container{max-width:1280px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.container,.nav-inner{padding-left:24px;padding-right:24px}}
+@media(max-width:768px){.container,.nav-inner{padding-left:20px;padding-right:20px}}
 /* ── NAV ── */
 #top-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between}
@@ -80,6 +82,7 @@ img{display:block;width:100%;object-fit:cover}
 @media(max-width:1024px){.nav-main{display:none}}
 /* ── PAGE HERO ── */
 .page-hero{padding:96px 0 72px;position:relative;overflow:hidden}
+@media(max-width:768px){.page-hero{padding:60px 0 40px}}
 .page-hero.dark{background:var(--dark)}
 .page-hero.cream{background:var(--cream)}
 .page-hero.white{background:var(--white)}
@@ -87,32 +90,33 @@ img{display:block;width:100%;object-fit:cover}
 .breadcrumb:hover{color:var(--accent)}
 .page-hero.dark .breadcrumb{color:rgba(255,255,255,0.45)}
 .page-hero.dark .breadcrumb:hover{color:var(--gold)}
-.label-en{font-family:var(--font-en);font-size:clamp(12px,1.2vw,13px);font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+.label-en{font-family:var(--font-en);font-size:clamp(12px,1.2vw,13px);font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
 .page-hero.dark .label-en{color:var(--gold)}
-.page-hero h1{font-family:'CreamFont',var(--font-zh);font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.25;color:var(--dark);margin-bottom:12px}
+.page-hero h1{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(2rem,4vw,47px);line-height:1.25;letter-spacing:0.05em;color:var(--dark);margin-bottom:12px}
 .page-hero.dark h1{color:var(--white)}
 .page-sub{font-family:var(--font-en);font-style:normal;font-size:clamp(16px,2vw,20px);font-weight:300;color:var(--stone);letter-spacing:.04em}
 .page-hero.dark .page-sub{color:rgba(255,255,255,0.4)}
 /* ── CONTENT ── */
 .page-main{padding:80px 0 120px}
 .content-block{margin-bottom:80px}
-.content-block h2{font-weight:300;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:var(--dark)}
+.content-block h2{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:#696969}
 .content-block p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:16px}
 .grid-2c{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .grid-3c{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .grid-4c{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 @media(max-width:900px){.grid-2c,.grid-3c{grid-template-columns:1fr}.grid-4c{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.grid-4c{grid-template-columns:1fr}}
-.card{background:var(--cream);padding:36px;border:1px solid var(--mist)}
+.card{background:#ffffff;padding:36px;border:1px solid #DCDCDC;border-radius:20px;min-height:200px;transition:background 0.3s ease,border-color 0.3s ease}.card:hover{background:#DCDCDC;border-color:rgba(201,169,110,0.4)}
     .card-img-overlay{transition:background 0.3s ease}
     .card:hover .card-img-overlay{background:rgba(255,255,255,0.40) !important}
 .card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--dark)}
 .card p{font-size:13.5px;line-height:1.9;color:var(--mid)}
-.card .en{font-family:var(--font-en);font-size:9px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;display:block}
+.card .en{font-family:var(--font-en);font-size:12px;letter-spacing:2.5px;color:var(--accent);text-transform:uppercase;margin-bottom:8px;display:block}
 .info-row{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--mist)}
 .info-lbl{font-family:var(--font-en);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);min-width:56px;padding-top:2px}
 .info-val{font-size:13.5px;color:var(--mid);line-height:1.7}
 .img-frame{overflow:hidden;height:400px}
+@media(max-width:768px){.img-frame{height:240px}}
 .img-frame img{height:100%;transition:transform .7s var(--ease)}
 .img-frame:hover img{transform:scale(1.03)}
 .section-divider{height:1px;background:var(--mist);margin:60px 0}
@@ -276,12 +280,62 @@ img{display:block;width:100%;object-fit:cover}
 }
 #mobile-menu .mobile-sub a:hover { color: var(--accent, #C9A96E) !important; }
 
+
+/* ── CSR Elyse-style split layout ── */
+.page-main.csr-split-main { padding: 0; }
+.csr-split { display: grid; grid-template-columns: 62% 38%; min-height: 100vh; }
+.csr-img-panel { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+/* csr slider */
+.csr-slider { position: relative; width: 100%; height: 100%; background: #0D0D0D; overflow: hidden; }
+.csr-slider-track { display: flex; flex-wrap: nowrap; height: 100%; width: 100%; transition: transform 0.55s cubic-bezier(.25,.46,.45,.94); will-change: transform; }
+.csr-slide { flex: 0 0 100%; width: 100%; height: 100%; overflow: hidden; }
+.csr-slide img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+.csr-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.6); background: rgba(255,255,255,0.25); backdrop-filter: blur(4px); color: #fff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.25s; z-index: 10; }
+.csr-arrow:hover { background: rgba(255,255,255,0.5); }
+.csr-arrow-prev { left: 14px; }
+.csr-arrow-next { right: 14px; }
+.csr-img-counter { position: absolute; bottom: 14px; right: 18px; font-family: var(--font-en); font-size: 11px; letter-spacing: 0.1em; color: rgba(255,255,255,0.85); z-index: 10; }
+.csr-img-counter em { font-style: normal; color: #fff; }
+.csr-content-panel { background: #FFFFFF; padding: 64px 52px 100px; color: var(--dark); overflow-y: auto; }
+.csr-brand-label { font-family: var(--font-en); font-size: 10px; letter-spacing: .38em; text-transform: uppercase; color: rgba(0,0,0,0.35); display: block; margin-bottom: 20px; }
+.csr-rule { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin-bottom: 44px; }
+.csr-content-panel h1 {
+  font-family: 'CreamFont','Noto Sans TC',sans-serif; font-weight: normal; font-style: normal;
+  font-size: clamp(1.8rem, 2.8vw, 3rem); color: var(--dark);
+  line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 28px;
+}
+.csr-body { font-family: var(--font-zh); font-size: 14px; line-height: 2; color: rgba(0,0,0,0.55); margin-bottom: 32px; }
+.csr-stat-row { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.csr-stat-chip .num { font-family: var(--font-en); font-size: 2rem; font-weight: 300; color: var(--gold); line-height: 1; }
+.csr-stat-chip .lbl { font-size: 11px; color: rgba(0,0,0,0.45); margin-top: 6px; }
+.csr-projects { display: flex; flex-direction: column; gap: 0; }
+.csr-project-item { padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+.csr-project-en { font-family: var(--font-en); font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+.csr-project-item h3 { font-family: 'CreamFont','Noto Sans TC',sans-serif; font-size: 1.05rem; font-weight: normal; color: var(--dark); margin-bottom: 8px; }
+.csr-project-item p { font-family: var(--font-zh); font-size: 13px; line-height: 1.9; color: rgba(0,0,0,0.5); margin-bottom: 0; }
+.csr-project-item.csr-clickable { cursor: pointer; }
+.csr-project-item.csr-clickable h3 { transition: color 0.25s ease; }
+.csr-project-item.csr-clickable:hover h3 { color: #696969; }
+@media(max-width:900px) {
+  .csr-split { grid-template-columns: 1fr; }
+  .csr-img-panel { position: relative; height: 60vw; min-height: 260px; }
+  .csr-content-panel { padding: 40px 20px 60px; }
+  .csr-content-panel h1 { font-size: 1.75rem; }
+}
+
+/* 切換簡體：中文改用 SourceHanSerifCN（思源宋體）；英文維持 Montserrat */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] body *{font-family:'Montserrat','SourceHanSerifCN','Noto Sans TC',sans-serif !important}
+/* 簡體時 nav 維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] #top-nav, html[lang="zh-CN"] #top-nav *,
+html[lang="zh-CN"] #mobile-menu, html[lang="zh-CN"] #mobile-menu *{font-family:var(--font-zh) !important}
+html[lang="zh-CN"] #top-nav .lang-switch a, html[lang="zh-CN"] #top-nav .nav-logo span{font-family:var(--font-en) !important}
 </style>
 </head>
 <body>
 <nav id="top-nav">
   <div class="nav-inner">
-    <a href="index-website.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="jpg/logo/LOGO-B.png" alt="KUAN'S LIVING"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span style="display:none">KUAN'S LIVING</span>
@@ -319,16 +373,16 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://shop.kuansliving.com" target="_blank">購物網站</a>
       </li>
       <li class="nav-direct">
-        <a href="magazine/index.html" target="_blank">線上雜誌</a>
+        <a href="http://magazine.kuansliving.com/" target="_blank">線上雜誌</a>
       </li>
     </ul>
     <div class="nav-right">
       <div class="lang-switch">
-        <a href="#" class="active">繁</a>
+        <a href="#" data-lang="zh-TW" class="active">繁</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">EN</a>
+        <a href="#" data-lang="en">EN</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">簡</a>
+        <a href="#" data-lang="zh-CN">簡</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -372,79 +426,78 @@ img{display:block;width:100%;object-fit:cover}
     </div>
   </div>
   <a href="https://shop.kuansliving.com" target="_blank" class="mobile-direct">購物網站</a>
-  <a href="magazine/index.html" target="_blank" class="mobile-direct">線上雜誌</a>
+  <a href="http://magazine.kuansliving.com/" target="_blank" class="mobile-direct">線上雜誌</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
+    <a href="#" data-lang="zh-TW" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
+    <a href="#" data-lang="en" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
+    <a href="#" data-lang="zh-CN" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
   </div>
 </div>
-<section class="page-hero white">
-  <div class="container">
-    <a href="index-website.html" class="breadcrumb">← 首頁 Home</a>
-    <span class="label-en">Corporate Social Responsibility · 品牌責任</span>
-    <h1>企業社會責任</h1>
-    <p class="page-sub">Feel with Your Heart. Act with Love.</p>
-  </div>
-</section>
-<main class="page-main">
-  <div class="container">
-
-    <div class="content-block grid-2c" style="align-items:center;">
-      <div>
-      <h2>用心去感受，用愛去行動</h2>
-      <p>寬庭作為在台灣與義大利創立的高端品牌，不僅專注於卓越品質，更積極以實際行動回饋社會，為環境永續與世代共好持續努力。</p>
-      <div class="stat-row"><div class="stat-chip"><div class="num csr-counter" data-target="310" data-suffix="+" style="color:var(--accent)">0+</div><div class="lbl" style="color:var(--stone)">合作學校</div></div><div class="stat-chip"><div class="num" style="color:var(--accent)">12.5萬</div><div class="lbl" style="color:var(--stone)">捐贈布料片</div></div><div class="stat-chip"><div class="num csr-counter" data-target="8000" data-suffix="+" style="color:var(--accent)">0+</div><div class="lbl" style="color:var(--stone)">課程參與人次</div></div></div>
-      </div>
-      <div class="img-frame"><img src="jpg/csr/csr_cover.jpg" alt="品牌責任" onerror="this.parentElement.style.background='#e8e0d8'"></div>
-    </div>
-    <div class="section-divider" style="background:var(--mist)"></div>
-    <div class="grid-2c content-block" style="align-items:start;">
-      <!-- Card 01 -->
-      <div class="card" style="padding:0;min-height:0;border:1px solid #C9A96E;position:relative;overflow:hidden;height:350px;border-radius:0px;">
-        <img src="jpg/csr/01_csr.jpg" alt="我的故事我的偶" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#e8e0d8'">
-        <div class="card-img-overlay" style="position:absolute;bottom:0;left:0;right:0;min-height:120px;padding:12px 24px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,0.70);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);">
-          <span class="en" style="font-size:12px;">Education · 2014+</span>
-          <h3 style="font-size:16px;margin-bottom:4px;color:var(--dark);">我的故事我的偶</h3>
-          <p style="font-size:13px;margin:0;color:var(--mid);">深入全台偏鄉小學推廣偶戲手藝文化，邀請台法文化獎得主羅斌帶領學童從戲偶製作到演出，為孩子埋下美學種子。累計超過 310 所學校參與。</p>
+<main class="page-main csr-split-main">
+  <div class="csr-split">
+    <div class="csr-img-panel">
+      <div class="csr-slider">
+        <div class="csr-slider-track" id="csrTrack">
+          <div class="csr-slide"><img src="jpg/csr/csr_cover.jpg" alt="品牌責任" onerror="this.parentElement.style.background='#e8e0d8'"></div>
+          <div class="csr-slide"><img src="jpg/csr/01_csr.jpg" alt="我的故事我的偶" onerror="this.parentElement.style.background='#e8e0d8'"></div>
+          <div class="csr-slide"><img src="jpg/csr/02_csr.jpg" alt="循環再造" onerror="this.parentElement.style.background='#e8e0d8'"></div>
+          <div class="csr-slide"><img src="jpg/csr/03_csr.jpg" alt="美學教學中心" onerror="this.parentElement.style.background='#e8e0d8'"></div>
+          <div class="csr-slide"><img src="jpg/csr/04_csr.jpg" alt="Seawool 環保蓋毯" onerror="this.parentElement.style.background='#e8e0d8'"></div>
         </div>
-      </div>
-      <!-- Card 02 -->
-      <div class="card" style="padding:0;min-height:0;border:1px solid #C9A96E;position:relative;overflow:hidden;height:350px;border-radius:0px;">
-        <img src="jpg/csr/02_csr.jpg" alt="循環再造・雙北導入" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#e8e0d8'">
-        <div class="card-img-overlay" style="position:absolute;bottom:0;left:0;right:0;min-height:120px;padding:12px 24px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,0.70);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);">
-          <span class="en" style="font-size:12px;">Recycle · 2020+</span>
-          <h3 style="font-size:16px;margin-bottom:4px;color:var(--dark);">循環再造・雙北導入</h3>
-          <p style="font-size:13px;margin:0;color:var(--mid);">疫情期間捐贈 12.5 萬片布料，提供雙北市 150 所國中導入家政課程，製作防疫口罩布套，實踐環保 3R 精神。</p>
-        </div>
-      </div>
-      <!-- Card 03 -->
-      <div class="card" style="padding:0;min-height:0;border:1px solid #C9A96E;position:relative;overflow:hidden;height:350px;border-radius:0px;">
-        <img src="jpg/csr/03_csr.jpg" alt="美學教學中心" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#e8e0d8'">
-        <div class="card-img-overlay" style="position:absolute;bottom:0;left:0;right:0;min-height:120px;padding:12px 24px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,0.70);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);">
-          <span class="en" style="font-size:12px;">Aesthetic Education · 2022</span>
-          <h3 style="font-size:16px;margin-bottom:4px;color:var(--dark);">美學教學中心</h3>
-          <p style="font-size:13px;margin:0;color:var(--mid);">全台第一間美學教學中心，設立於松山家商，開發 45 門課程，吸引 8,000 人次，培育生活美學產業專業人才。</p>
-        </div>
-      </div>
-      <!-- Card 04 -->
-      <div class="card" style="padding:0;min-height:0;border:1px solid #C9A96E;position:relative;overflow:hidden;height:350px;border-radius:0px;">
-        <img src="jpg/csr/04_csr.jpg" alt="Seawool 環保蓋毯" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;" onerror="this.parentElement.style.background='#e8e0d8'">
-        <div class="card-img-overlay" style="position:absolute;bottom:0;left:0;right:0;min-height:120px;padding:12px 24px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;background:rgba(255,255,255,0.70);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);">
-          <span class="en" style="font-size:12px;">Sustainability · 2017+</span>
-          <h3 style="font-size:16px;margin-bottom:4px;color:var(--dark);">Seawool 環保蓋毯</h3>
-          <p style="font-size:13px;margin:0;color:var(--mid);">由牡蠣回收紗製成的創新機上蓋毯，將每年 16 萬公噸廢棄貝殼轉化為高端航空用品，亞洲知名航空公司持續採購。</p>
-        </div>
+        <button class="csr-arrow csr-arrow-prev" onclick="csrSlide(-1)">←</button>
+        <button class="csr-arrow csr-arrow-next" onclick="csrSlide(1)">→</button>
+        <div class="csr-img-counter"><em id="csrCurrent">1</em> / 5</div>
       </div>
     </div>
-
+    <div class="csr-content-panel">
+      <span class="csr-brand-label">KUAN'S LIVING · 品牌責任</span>
+      <hr class="csr-rule">
+      <h1>用心去感受，<br>用愛去行動</h1>
+      <p class="csr-body">寬庭作為在台灣與義大利創立的高端品牌，不僅專注於卓越品質，更積極以實際行動回饋社會，為環境永續與世代共好持續努力。</p>
+      <div class="csr-stat-row">
+        <div class="csr-stat-chip">
+          <div class="num csr-counter" data-target="310" data-suffix="+">0+</div>
+          <div class="lbl">合作學校</div>
+        </div>
+        <div class="csr-stat-chip">
+          <div class="num">12.5萬</div>
+          <div class="lbl">捐贈布料片</div>
+        </div>
+        <div class="csr-stat-chip">
+          <div class="num csr-counter" data-target="8000" data-suffix="+">0+</div>
+          <div class="lbl">課程參與人次</div>
+        </div>
+      </div>
+      <div class="csr-projects">
+        <div class="csr-project-item csr-clickable" onclick="csrGoTo(1)">
+          <span class="csr-project-en">Education · 2014+</span>
+          <h3>我的故事我的偶</h3>
+          <p>深入全台偏鄉小學推廣偶戲手藝文化，邀請台法文化獎得主羅斌帶領學童從戲偶製作到演出，為孩子埋下美學種子。累計超過 310 所學校參與。</p>
+        </div>
+        <div class="csr-project-item csr-clickable" onclick="csrGoTo(2)">
+          <span class="csr-project-en">Recycle · 2020+</span>
+          <h3>循環再造・雙北導入</h3>
+          <p>疫情期間捐贈 12.5 萬片布料，提供雙北市 150 所國中導入家政課程，製作防疫口罩布套，實踐環保 3R 精神。</p>
+        </div>
+        <div class="csr-project-item csr-clickable" onclick="csrGoTo(3)">
+          <span class="csr-project-en">Aesthetic Education · 2022</span>
+          <h3>美學教學中心</h3>
+          <p>全台第一間美學教學中心，設立於松山家商，開發 45 門課程，吸引 8,000 人次，培育生活美學產業專業人才。</p>
+        </div>
+        <div class="csr-project-item csr-clickable" onclick="csrGoTo(4)">
+          <span class="csr-project-en">Sustainability · 2017+</span>
+          <h3>Seawool 環保蓋毯</h3>
+          <p>由牡蠣回收紗製成的創新機上蓋毯，將每年 16 萬公噸廢棄貝殼轉化為高端航空用品，亞洲知名航空公司持續採購。</p>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 <footer id="footer">
   <div class="container">
         <div class="footer-top">
       <div>
-        <div class="footer-logo">KUAN'S LIVING</div>
+        <div class="footer-logo"><img src="jpg/logo/LOGO-w.png" alt="KUAN'S LIVING" style="height:15px;width:auto;display:block;margin-bottom:4px"></div>
         <div class="footer-tag">Where Eastern Mastery<br>Meets Western Refinement.<br><br>寬庭美學股份有限公司<br>Est. 1991 · Taipei &amp; Milano</div>
       </div>
       <div class="footer-nav">
@@ -460,12 +513,29 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://www.facebook.com/kuansliving/" target="_blank">Facebook</a>
         <a href="https://kuans.co/WDDI9" target="_blank">Instagram</a>
         <a href="https://kuans.co/QBei1" target="_blank">LINE</a>
-        <a href="https://kuans.co/AMgzq" target="_blank">立即購物</a>
       </div>
     </div>
   </div>
 </footer>
 <script>
+// ── CSR 圖片輪播 ──────────────────────────────────────────────
+var csrIndex = 0;
+var csrTotal = 5;
+function csrSlide(dir) {
+  csrIndex = (csrIndex + dir + csrTotal) % csrTotal;
+  var track = document.getElementById('csrTrack');
+  if (track) track.style.transform = 'translateX(-' + (csrIndex * 100) + '%)';
+  var cur = document.getElementById('csrCurrent');
+  if (cur) cur.textContent = csrIndex + 1;
+}
+function csrGoTo(i) {
+  csrIndex = (i % csrTotal + csrTotal) % csrTotal;
+  var track = document.getElementById('csrTrack');
+  if (track) track.style.transform = 'translateX(-' + (csrIndex * 100) + '%)';
+  var cur = document.getElementById('csrCurrent');
+  if (cur) cur.textContent = csrIndex + 1;
+}
+
 // ── CSR 數字累加動畫 ──────────────────────────────────────────
 (function() {
   function animateCsrCounter(el) {
@@ -496,6 +566,75 @@ img{display:block;width:100%;object-fit:cover}
 })();
 
 // ── Mobile menu ──────────────────────────────────────────────
+// ── 多語系切換 (繁/簡) ─────────────────────────────────────
+(function() {
+  const TC2SC = {
+    '寬':'宽','餘':'余','場':'场','義':'义','寢':'寝','飾':'饰',
+    '織':'织','藝':'艺','裝':'装','極':'极','學':'学','關':'关',
+    '於':'于','體':'体','驗':'验','間':'间','責':'责','務':'务',
+    '據':'据','點':'点','選':'选','臥':'卧','購':'购','網':'网',
+    '線':'线','雜':'杂','誌':'志','襲':'袭','東':'东','蘊':'蕴',
+    '針':'针','陳':'陈','靜':'静','創':'创','個':'个','將':'将',
+    '訂':'订','導':'导','國':'国','際':'际','軌':'轨','蘭':'兰',
+    '誕':'诞','廣':'广','級':'级','製':'制','賞':'赏','參':'参',
+    '報':'报','華':'华','總':'总','統':'统','慶':'庆','漢':'汉',
+    '獎':'奖','機':'机','連':'连','兩':'两','獲':'获','課':'课',
+    '與':'与','嶄':'崭','視':'视','設':'设','週':'周','會':'会',
+    '館':'馆','資':'资','跡':'迹','業':'业','頂':'顶','夥':'伙',
+    '專':'专','屬':'属','誠':'诚','榮':'荣','頭':'头','艙':'舱',
+    '禮':'礼','顯':'显','顧':'顾','畫':'画','劃':'划','優':'优',
+    '帳':'账','號':'号','為':'为','來':'来','長':'长','實':'实',
+    '後':'后','過':'过','發':'发','還':'还','從':'从','說':'说',
+    '們':'们','進':'进','聯':'联','數':'数','樣':'样','標':'标',
+    '節':'节','時':'时','動':'动','開':'开','對':'对','術':'术',
+    '歷':'历','語':'语','認':'认','識':'识','縣':'县','鄉':'乡'
+  };
+
+  const nodeMap = new Map();
+
+  function collectNodes(el) {
+    if (el.nodeType === 3) {
+      if (el.nodeValue.trim()) nodeMap.set(el, el.nodeValue);
+    } else if (el.nodeType === 1 &&
+        !['SCRIPT','STYLE','META','LINK','NOSCRIPT'].includes(el.tagName)) {
+      el.childNodes.forEach(collectNodes);
+    }
+  }
+
+  function applyLang(lang) {
+    const sc = lang === 'zh-CN';
+    nodeMap.forEach((orig, n) => {
+      n.nodeValue = sc ? orig.replace(/./g, c => TC2SC[c] || c) : orig;
+    });
+    document.documentElement.lang = sc ? 'zh-CN' : 'zh-TW';
+    document.querySelectorAll('.page-hero h1, .content-block h2').forEach(el => {
+      el.style.fontFamily = sc ? "'MontserratMedium','SourceHanSerifCN','Noto Sans TC',sans-serif"
+                               : "'MontserratMedium','CreamFont','Noto Sans TC',sans-serif";
+    });
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.dataset.lang === lang;
+      if (el.closest('.lang-switch')) {
+        el.classList.toggle('active', active);
+      } else {
+        el.style.color = active ? 'var(--accent)' : 'var(--stone)';
+      }
+    });
+    localStorage.setItem('kl-lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    collectNodes(document.body);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        applyLang(el.dataset.lang);
+      });
+    });
+    const stored = localStorage.getItem('kl-lang');
+    if (stored && stored !== 'zh-TW') applyLang(stored);
+  });
+})();
+
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');
   if (menu) menu.classList.toggle('open');

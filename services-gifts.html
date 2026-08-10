@@ -30,8 +30,8 @@
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index-website.html"},
-          {"@type": "ListItem", "position": 2, "name": "企業合作", "item": "https://www.kuansliving.com/index-website.html#services-pin"},
+          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index.html"},
+          {"@type": "ListItem", "position": 2, "name": "企業合作", "item": "https://www.kuansliving.com/index.html#services-pin"},
           {"@type": "ListItem", "position": 3, "name": "禮贈品", "item": "https://www.kuansliving.com/services-gifts.html"}
         ]
       }
@@ -42,7 +42,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}
+@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}@font-face{font-family:'MontserratMedium';src:url('font/Montserrat-Medium.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF;}
+
+@font-face{font-family:'SourceHanSerifCN';src:url('font/SourceHanSerifCN-Medium.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;color:#2A2A2A;background:#fff;overflow-x:hidden}
@@ -50,7 +52,7 @@ a{text-decoration:none;color:inherit}
 img{display:block;width:100%;object-fit:cover}
 :root{--green:#076C44;--green-dark:#054F32;--green-xl:#E8F2EC;--white:#fff;--cream:#F8F6F2;--mist:#D4DDE1;--stone:#9CA0AE;--gold:#C9A96E;--accent:#C9A96E;--dark:#0D0D0D;--mid:#4A4A4A;--font-en:'Montserrat',sans-serif;--font-zh:'Noto Sans TC',sans-serif;--ease:cubic-bezier(.25,.46,.45,.94);--trans:0.3s var(--ease)}
 .container{max-width:1280px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.container,.nav-inner{padding-left:24px;padding-right:24px}}
+@media(max-width:768px){.container,.nav-inner{padding-left:20px;padding-right:20px}}
 /* ── NAV ── */
 #top-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between}
@@ -85,21 +87,21 @@ img{display:block;width:100%;object-fit:cover}
 .page-hero.dark .breadcrumb:hover{color:var(--gold)}
 .label-en{font-family:var(--font-en);font-size:clamp(12px,1.2vw,13px);font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
 .page-hero.dark .label-en{color:var(--gold)}
-.page-hero h1{font-family:'CreamFont',var(--font-zh);font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.25;color:var(--dark);margin-bottom:12px}
+.page-hero h1{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(2rem,4vw,47px);letter-spacing:0.05em;line-height:1.25;color:var(--dark);margin-bottom:12px}
 .page-hero.dark h1{color:var(--white)}
 .page-sub{font-family:var(--font-en);font-style:normal;font-size:clamp(16px,2vw,20px);font-weight:300;color:var(--stone);letter-spacing:.04em}
 .page-hero.dark .page-sub{color:rgba(255,255,255,0.4)}
 /* ── CONTENT ── */
 .page-main{padding:80px 0 120px}
 .content-block{margin-bottom:80px}
-.content-block h2{font-weight:300;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:var(--dark)}
+.content-block h2{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:#696969}
 .content-block p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:16px}
 .grid-2c{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .grid-3c{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .grid-4c{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 @media(max-width:900px){.grid-2c,.grid-3c{grid-template-columns:1fr}.mobile-img-first>div:first-child{order:2}.mobile-img-first>div:last-child{order:1}.grid-4c{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.grid-4c{grid-template-columns:1fr}}
-.card{background:var(--cream);padding:36px;border:1px solid var(--mist)}
+.card{background:var(--cream);padding:36px;border:1px solid var(--mist);transition:background 0.3s ease,border-color 0.3s ease}.card:hover{background:#DCDCDC;border-color:rgba(201,169,110,0.4)}
 .card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--dark)}
 .card p{font-size:13.5px;line-height:1.9;color:var(--mid)}
 .card .en{font-family:var(--font-en);font-size:9px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;display:block}
@@ -356,12 +358,59 @@ img{display:block;width:100%;object-fit:cover}
 @media(max-width:900px) {
   .gifts-slider { height: 600px; width: 100%; }
 }
+
+/* ── about-style Elyse split layout ── */
+.page-main.ab-split-main { padding: 0; }
+.ab-split { display: grid; grid-template-columns: 62% 38%; min-height: 100vh; }
+.ab-img-panel { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.ab-img-panel .gifts-slider { height: 100%; width: 100%; max-width: none; background: #0D0D0D; }
+.ab-content-panel { background: #FFFFFF; padding: 64px 52px 100px; color: var(--dark); overflow-y: auto; display: flex; flex-direction: column; justify-content: center; }
+.ab-brand-label { font-family: var(--font-en); font-size: 10px; letter-spacing: .38em; text-transform: uppercase; color: rgba(0,0,0,0.35); display: block; margin-bottom: 20px; }
+.ab-rule { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin-bottom: 44px; }
+.ab-content-panel h1 {
+  font-family: 'CreamFont','Noto Sans TC',sans-serif; font-weight: normal; font-style: normal;
+  font-size: clamp(1.8rem, 2.8vw, 3rem); color: var(--dark);
+  line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 28px;
+}
+.ab-body { font-family: var(--font-zh); font-size: 14px; line-height: 2; color: rgba(0,0,0,0.55); margin-bottom: 18px; }
+.ab-body strong { color: var(--dark); font-weight: 600; }
+.ab-principles { border-top: 1px solid rgba(0,0,0,0.1); margin-top: 12px; margin-bottom: 24px; }
+.ab-principle-item { padding: 22px 0; border-bottom: 1px solid rgba(0,0,0,0.07); }
+.ab-principle-en { font-family: var(--font-en); font-size: 9px; letter-spacing: .28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+.ab-principle-item h3 { font-family: 'CreamFont','Noto Sans TC',sans-serif; font-size: 1.05rem; font-weight: normal; color: var(--dark); margin-bottom: 8px; }
+.ab-principle-item p { font-family: var(--font-zh); font-size: 13px; line-height: 1.9; color: rgba(0,0,0,0.5); margin-bottom: 0; }
+.ab-btn-row { margin-top: 20px; }
+.btn-visit {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-en); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: #fff; background: #111; border-radius: 100px; padding: 13px 32px;
+  transition: background .25s ease, color .25s ease;
+}
+.btn-visit:hover { background: var(--gold); color: #fff; }
+@media(max-width:900px) {
+  .ab-split { grid-template-columns: 1fr; }
+  .ab-img-panel { position: relative; height: auto; }
+  .ab-img-panel .gifts-slider { height: 600px; }
+  .ab-content-panel { padding: 40px 20px 60px; }
+  .ab-content-panel h1 { font-size: 1.75rem; }
+}
+/* 01_gifts.jpg 桌機畫面往上移 5px */
+@media(min-width:901px) {
+  .ab-img-panel .gifts-slide:first-child img { object-position: center calc(50% - 5px); }
+}
+/* 切換簡體：中文改用 SourceHanSerifCN（思源宋體）；英文維持 Montserrat */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] body *{font-family:'Montserrat','SourceHanSerifCN','Noto Sans TC',sans-serif !important}
+/* 簡體時 nav 維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] #top-nav, html[lang="zh-CN"] #top-nav *,
+html[lang="zh-CN"] #mobile-menu, html[lang="zh-CN"] #mobile-menu *{font-family:var(--font-zh) !important}
+html[lang="zh-CN"] #top-nav .lang-switch a, html[lang="zh-CN"] #top-nav .nav-logo span{font-family:var(--font-en) !important}
 </style>
 </head>
 <body>
 <nav id="top-nav">
   <div class="nav-inner">
-    <a href="index-website.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="jpg/logo/LOGO-B.png" alt="KUAN'S LIVING"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span style="display:none">KUAN'S LIVING</span>
@@ -399,16 +448,16 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://shop.kuansliving.com" target="_blank">購物網站</a>
       </li>
       <li class="nav-direct">
-        <a href="magazine/index.html" target="_blank">線上雜誌</a>
+        <a href="http://magazine.kuansliving.com/" target="_blank">線上雜誌</a>
       </li>
     </ul>
     <div class="nav-right">
       <div class="lang-switch">
-        <a href="#" class="active">繁</a>
+        <a href="#" class="active" data-lang="zh-TW">繁</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">EN</a>
+        <a href="#" data-lang="en">EN</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">簡</a>
+        <a href="#" data-lang="zh-CN">簡</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -452,31 +501,16 @@ img{display:block;width:100%;object-fit:cover}
     </div>
   </div>
   <a href="https://shop.kuansliving.com" target="_blank" class="mobile-direct">購物網站</a>
-  <a href="magazine/index.html" target="_blank" class="mobile-direct">線上雜誌</a>
+  <a href="http://magazine.kuansliving.com/" target="_blank" class="mobile-direct">線上雜誌</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
+    <a href="#" data-lang="zh-TW" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
+    <a href="#" data-lang="en" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
+    <a href="#" data-lang="zh-CN" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
   </div>
 </div>
-<section class="page-hero white">
-  <div class="container">
-    <a href="index-website.html" class="breadcrumb">← 首頁 Home</a>
-    <span class="label-en">Corporate Gifting · 禮贈品</span>
-    <h1>禮贈品</h1>
-    <p class="page-sub">Bespoke Corporate Gifts — Elevate Your Brand</p>
-  </div>
-</section>
-<main class="page-main">
-  <div class="container">
-    <div class="content-block grid-2c mobile-img-first" style="gap:60px;">
-      <div>
-        <h2>量身定製<br>彰顯尊榮品味的禮品</h2>
-        <p>寬庭專為企業打造量身定制的禮贈品服務，融合獨具匠心的設計與精緻選品，深化您與客戶及合作夥伴的緊密關係。</p>
-        <p><strong>精緻瓷器：</strong>嚴選頂級瓷器，可客製品牌標誌或專屬設計，淬鍊出獨一無二的雋永謝禮。<br><strong>環保毛毯：</strong>精選 Seawool 牡蠣回收紗製成，兼顧極致質感與環境友善，是呼應企業 ESG 精神的完美代表。</p>
-        <p>讓每份禮品完美契合品牌精神，彰顯不凡品味，留下難以忘懷的品牌印象。</p>
-        <div class="btn-row"><a href="mailto:bespoke@kuansliving.com" class="btn-gold">立即詢問 →</a></div>
-      </div>
+<main class="page-main ab-split-main">
+  <div class="ab-split">
+    <div class="ab-img-panel">
       <div class="gifts-slider">
         <div class="gifts-slider-track" id="giftsTrack">
           <div class="gifts-slide"><img src="jpg/gifts/01_gifts.jpg" alt="禮贈品 1" onerror="this.parentElement.style.background='#e8e0d8'"></div>
@@ -491,13 +525,33 @@ img{display:block;width:100%;object-fit:cover}
         <div class="gifts-counter"><em id="giftsCurrent">1</em> / 6</div>
       </div>
     </div>
+    <div class="ab-content-panel">
+      <span class="ab-brand-label">Corporate Gifting · 禮贈品</span>
+      <hr class="ab-rule">
+      <h1>量身定製<br>彰顯尊榮品味的禮品</h1>
+      <p class="ab-body">寬庭專為企業打造量身定制的禮贈品服務，融合獨具匠心的設計與精緻選品，深化您與客戶及合作夥伴的緊密關係。</p>
+      <div class="ab-principles">
+        <div class="ab-principle-item">
+          <span class="ab-principle-en">Fine Porcelain</span>
+          <h3>精緻瓷器</h3>
+          <p>嚴選頂級瓷器，可客製品牌標誌或專屬設計，淬鍊出獨一無二的雋永謝禮。</p>
+        </div>
+        <div class="ab-principle-item">
+          <span class="ab-principle-en">Eco Blanket</span>
+          <h3>環保毛毯</h3>
+          <p>精選 Seawool 牡蠣回收紗製成，兼顧極致質感與環境友善，是呼應企業 ESG 精神的完美代表。</p>
+        </div>
+      </div>
+      <p class="ab-body">讓每份禮品完美契合品牌精神，彰顯不凡品味，留下難以忘懷的品牌印象。</p>
+      <div class="ab-btn-row"><a href="mailto:bespoke@kuansliving.com" class="btn-visit">立即詢問 →</a></div>
+    </div>
   </div>
 </main>
 <footer id="footer">
   <div class="container">
         <div class="footer-top">
       <div>
-        <div class="footer-logo">KUAN'S LIVING</div>
+        <div class="footer-logo"><img src="jpg/logo/LOGO-w.png" alt="KUAN'S LIVING" style="height:15px;width:auto;display:block;margin-bottom:4px"></div>
         <div class="footer-tag">Where Eastern Mastery<br>Meets Western Refinement.<br><br>寬庭美學股份有限公司<br>Est. 1991 · Taipei &amp; Milano</div>
       </div>
       <div class="footer-nav">
@@ -513,7 +567,6 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://www.facebook.com/kuansliving/" target="_blank">Facebook</a>
         <a href="https://kuans.co/WDDI9" target="_blank">Instagram</a>
         <a href="https://kuans.co/QBei1" target="_blank">LINE</a>
-        <a href="https://kuans.co/AMgzq" target="_blank">立即購物</a>
       </div>
     </div>
   </div>
@@ -544,6 +597,102 @@ img{display:block;width:100%;object-fit:cover}
     }, {passive:true});
   });
 })();
+
+// ── Language switch ──────────────────────────────────────────
+(function() {
+  const TC2SC = {
+    '寬':'宽','餘':'余','場':'场','義':'义','寢':'寝','飾':'饰',
+    '織':'织','藝':'艺','裝':'装','極':'极','學':'学','關':'关',
+    '於':'于','體':'体','驗':'验','間':'间','責':'责','務':'务',
+    '據':'据','點':'点','選':'选','臥':'卧','購':'购','網':'网',
+    '線':'线','雜':'杂','誌':'志','東':'东','蘊':'蕴','針':'针',
+    '陳':'陈','靜':'静','創':'创','個':'个','將':'将','訂':'订',
+    '導':'导','國':'国','際':'际','軌':'轨','蘭':'兰','誕':'诞',
+    '廣':'广','級':'级','製':'制','賞':'赏','參':'参','報':'报',
+    '華':'华','總':'总','統':'统','慶':'庆','漢':'汉','獎':'奖',
+    '機':'机','連':'连','兩':'两','獲':'获','課':'课','與':'与',
+    '嶄':'崭','視':'视','設':'设','週':'周','會':'会','館':'馆',
+    '資':'资','跡':'迹','業':'业','頂':'顶','夥':'伙','專':'专',
+    '屬':'属','誠':'诚','榮':'荣','頭':'头','艙':'舱','禮':'礼',
+    '顯':'显','顧':'顾','畫':'画','劃':'划','優':'优','帳':'账',
+    '號':'号','為':'为','來':'来','長':'长','實':'实','後':'后',
+    '過':'过','發':'发','還':'还','從':'从','說':'说','們':'们',
+    '進':'进','聯':'联','數':'数','樣':'样','標':'标','節':'节',
+    '時':'时','動':'动','開':'开','對':'对','門':'门','贈':'赠',
+    '軟':'软','遠':'远','璽':'玺','啟':'启','風':'风','復':'复',
+    '興':'兴','傳':'传','鳳':'凤','豐':'丰','讓':'让','轉':'转',
+    '覺':'觉','覽':'览','築':'筑','謝':'谢','調':'调','質':'质',
+    '費':'费','請':'请','語':'语','話':'话','試':'试','緻':'致',
+    '寶':'宝','結':'结','纖':'纤','絲':'丝','緹':'缇','繡':'绣',
+    '鬆':'松','護':'护','計':'计','溫':'温','島':'岛','鴨':'鸭',
+    '歐':'欧','鵝':'鹅','蠶':'蚕','應':'应','撐':'撑','記':'记',
+    '憶':'忆','貼':'贴','頸':'颈','張':'张','層':'层','輔':'辅',
+    '乾':'干','韻':'韵','麗':'丽','靈':'灵','纏':'缠','繪':'绘',
+    '縷':'缕','緣':'缘','潔':'洁','續':'续','緩':'缓','縮':'缩',
+    '繞':'绕','締':'缔','維':'维','紡':'纺','羅':'罗','錦':'锦',
+    '綾':'绫','絹':'绢','換':'换','歡':'欢','劑':'剂','濕':'湿',
+    '潤':'润','熱':'热','壓':'压','倉':'仓','庫':'库','臺':'台',
+    '灣':'湾','現':'现','療':'疗','氣':'气','納':'纳','項':'项',
+    '喚':'唤','釋':'释','憊':'惫','規':'规','條':'条','膚':'肤',
+    '諾':'诺','鎖':'锁','雲':'云','滿':'满','儀':'仪','腳':'脚',
+    '種':'种','內':'内','謐':'谧','騰':'腾','隨':'随','隱':'隐',
+    '陽':'阳','隻':'只','難':'难','離':'离','類':'类','願':'愿',
+    '養':'养','鮮':'鲜','鹽':'盐','龍':'龙','鵲':'鹊','繫':'系',
+    '橫':'横','銀':'银','銅':'铜','鐵':'铁','鋼':'钢','絡':'络',
+    '編':'编','當':'当','確':'确','卻':'却','術':'术','礎':'础',
+    '協':'协','環':'环','攜':'携','歷':'历','爾':'尔','論':'论',
+    '簡':'简','約':'约','銜':'衔','這':'这','僅':'仅','著':'着',
+    '講':'讲','歸':'归','經':'经','績':'绩','緊':'紧','繼':'继',
+    '絕':'绝','飛':'飞','聲':'声','舊':'旧','衛':'卫','賴':'赖',
+    '踐':'践','邏':'逻','鄰':'邻','錯':'错','錢':'钱','鏡':'镜',
+    '倫':'伦','師':'师','稱':'称','並':'并','聖':'圣','獨':'独',
+    '該':'该','堅':'坚','礙':'碍','嚴':'严','價':'价','雙':'双',
+    '變':'变','鍵':'键','夠':'够','產':'产','顏':'颜','擇':'择',
+    '準':'准','辦':'办','樂':'乐','見':'见','證':'证','陰':'阴',
+    '達':'达','鹼':'碱','頁':'页','園':'园','詢':'询','問':'问',
+    '亞':'亚','憑':'凭','藉':'借','適':'适','勞':'劳','贏':'赢',
+    '領':'领','戶':'户','係':'系','鍊':'炼','雋':'隽','蠣':'蛎',
+    '紗':'纱','懷':'怀','無':'无'
+  };
+  const nodeMap = new Map();
+  function collectNodes(el) {
+    if (el.nodeType === 3) {
+      if (el.nodeValue.trim()) nodeMap.set(el, el.nodeValue);
+    } else if (el.nodeType === 1 &&
+        !['SCRIPT','STYLE','META','LINK','NOSCRIPT'].includes(el.tagName)) {
+      el.childNodes.forEach(collectNodes);
+    }
+  }
+  function applyLang(lang) {
+    const sc = lang === 'zh-CN';
+    nodeMap.forEach((orig, n) => {
+      n.nodeValue = sc ? orig.replace(/./g, c => TC2SC[c] || c) : orig;
+    });
+    document.documentElement.lang = sc ? 'zh-CN' : 'zh-TW';
+    document.querySelectorAll('.page-hero h1, .content-block h2').forEach(el => {
+      el.style.fontFamily = sc ? "'MontserratMedium','SourceHanSerifCN','Noto Sans TC',sans-serif"
+                               : "'MontserratMedium','CreamFont','Noto Sans TC',sans-serif";
+    });
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.dataset.lang === lang;
+      if (el.closest('.lang-switch')) {
+        el.classList.toggle('active', active);
+      } else {
+        el.style.color = active ? 'var(--accent)' : 'var(--stone)';
+      }
+    });
+    localStorage.setItem('kl-lang', lang);
+  }
+  document.addEventListener('DOMContentLoaded', () => {
+    collectNodes(document.body);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => { e.preventDefault(); applyLang(el.dataset.lang); });
+    });
+    const stored = localStorage.getItem('kl-lang');
+    if (stored && stored !== 'zh-TW') applyLang(stored);
+  });
+})();
+
 // ── Mobile menu ──────────────────────────────────────────────
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');

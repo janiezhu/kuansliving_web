@@ -34,7 +34,7 @@
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index-website.html"},
+          {"@type": "ListItem", "position": 1, "name": "首頁", "item": "https://www.kuansliving.com/index.html"},
           {"@type": "ListItem", "position": 2, "name": "體驗空間", "item": "https://www.kuansliving.com/warehouse.html"}
         ]
       }
@@ -45,8 +45,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Noto+Sans+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}
-.page-hero h1{font-family:'CreamFont',serif;}
+@font-face{font-family:'CreamFont';src:url('font/creamfont-3.1.woff2') format('woff2');font-weight:normal;font-style:normal;font-display:swap;}@font-face{font-family:'MontserratMedium';src:url('font/Montserrat-Medium.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap;unicode-range:U+0020-007E,U+00A0-00FF;}
+
+@font-face{font-family:'SourceHanSerifCN';src:url('font/SourceHanSerifCN-Medium.otf') format('opentype');font-weight:normal;font-style:normal;font-display:swap;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Noto Sans TC',sans-serif;color:#2A2A2A;background:#fff;overflow-x:hidden}
@@ -54,7 +55,7 @@ a{text-decoration:none;color:inherit}
 img{display:block;width:100%;object-fit:cover}
 :root{--green:#076C44;--green-dark:#054F32;--green-xl:#E8F2EC;--white:#fff;--cream:#F8F6F2;--mist:#D4DDE1;--stone:#9CA0AE;--gold:#C9A96E;--accent:#C9A96E;--dark:#0D0D0D;--mid:#4A4A4A;--font-en:'Montserrat',sans-serif;--font-zh:'Noto Sans TC',sans-serif;--ease:cubic-bezier(.25,.46,.45,.94);--trans:0.3s var(--ease)}
 .container{max-width:1280px;margin:0 auto;padding:0 48px}
-@media(max-width:768px){.container,.nav-inner{padding-left:24px;padding-right:24px}}
+@media(max-width:768px){.container,.nav-inner{padding-left:20px;padding-right:20px}}
 /* ── NAV ── */
 #top-nav{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between}
@@ -80,6 +81,7 @@ img{display:block;width:100%;object-fit:cover}
 @media(max-width:1024px){.nav-main{display:none}}
 /* ── PAGE HERO ── */
 .page-hero{padding:96px 0 72px;position:relative;overflow:hidden}
+@media(max-width:768px){.page-hero{padding:60px 0 40px}.img-frame{height:260px!important}}
 .page-hero.dark{background:var(--dark)}
 .page-hero.cream{background:var(--cream)}
 .page-hero.white{background:var(--white)}
@@ -87,23 +89,23 @@ img{display:block;width:100%;object-fit:cover}
 .breadcrumb:hover{color:var(--accent)}
 .page-hero.dark .breadcrumb{color:rgba(255,255,255,0.45)}
 .page-hero.dark .breadcrumb:hover{color:var(--gold)}
-.label-en{font-family:var(--font-en);font-size:clamp(12px,1.2vw,13px);font-weight:500;letter-spacing:.35em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
+.label-en{font-family:var(--font-en);font-size:clamp(12px,1.2vw,13px);font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px}
 .page-hero.dark .label-en{color:var(--gold)}
-.page-hero h1{font-family:'CreamFont',var(--font-zh);font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.25;color:var(--dark);margin-bottom:12px}
+.page-hero h1{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(2rem,4vw,47px);line-height:1.25;letter-spacing:0.05em;color:var(--dark);margin-bottom:12px}
 .page-hero.dark h1{color:#ffffff}
 .page-sub{font-family:var(--font-en);font-style:normal;font-size:clamp(16px,2vw,20px);font-weight:300;color:var(--stone);letter-spacing:.04em}
 .page-hero.dark .page-sub{color:rgba(255,255,255,0.4)}
 /* ── CONTENT ── */
 .page-main{padding:80px 0 120px}
 .content-block{margin-bottom:80px}
-.content-block h2{font-weight:300;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:var(--dark)}
+.content-block h2{font-family:'MontserratMedium','CreamFont','Noto Sans TC',sans-serif;font-weight:normal;font-size:clamp(1.5rem,2.5vw,2.2rem);margin-bottom:20px;color:#C0C0C0}
 .content-block p{font-size:15px;line-height:2;color:var(--mid);margin-bottom:16px}
 .grid-2c{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .grid-3c{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
 .grid-4c{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 @media(max-width:900px){.grid-2c,.grid-3c{grid-template-columns:1fr}.grid-4c{grid-template-columns:1fr 1fr}}
 @media(max-width:500px){.grid-4c{grid-template-columns:1fr}}
-.card{background:var(--cream);padding:36px;border:1px solid var(--mist)}
+.card{background:var(--cream);padding:36px;border:1px solid transparent;border-radius:20px;transition:background 0.3s ease,border-color 0.3s ease}.card:hover{background:#DCDCDC;border-color:rgba(201,169,110,0.4)}
 .card h3{font-size:1.1rem;font-weight:600;margin-bottom:10px;color:var(--dark)}
 .card p{font-size:13.5px;line-height:1.9;color:var(--mid)}
 .card .en{font-family:var(--font-en);font-size:9px;letter-spacing:.2em;color:var(--accent);text-transform:uppercase;margin-bottom:8px;display:block}
@@ -261,167 +263,6 @@ img{display:block;width:100%;object-fit:cover}
 }
 .mobile-direct:hover { color: var(--accent); }
 
-/* ── Experience full-bleed layout ── */
-.exp-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 85vh;
-}
-.exp-img {
-  position: relative;
-  overflow: hidden;
-  min-height: 500px;
-}
-.exp-img img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-.exp-content {
-  background: #0D0D0D;
-  padding: 80px 72px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-}
-.exp-label {
-  font-family: var(--font-en);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-}
-.exp-title {
-  font-family: var(--font-zh);
-  font-weight: 300;
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #ffffff;
-  line-height: 1.25;
-  margin: 0;
-}
-.exp-title em {
-  font-family: var(--font-en);
-  font-style: italic;
-  font-weight: 300;
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.4);
-  display: block;
-  margin-top: 6px;
-}
-.exp-body {
-  font-family: var(--font-zh);
-  font-size: 14.5px;
-  line-height: 2;
-  color: rgba(255,255,255,0.6);
-}
-.exp-info-table {
-  border-top: 1px solid rgba(255,255,255,0.1);
-  padding-top: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.exp-info-row {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.exp-info-lbl {
-  font-family: var(--font-en);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold);
-  min-width: 52px;
-  padding-top: 2px;
-  flex-shrink: 0;
-}
-.exp-info-val {
-  font-family: var(--font-zh);
-  font-size: 13.5px;
-  color: rgba(255,255,255,0.72);
-  line-height: 1.6;
-}
-.exp-map-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-en);
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding: 14px 0;
-  border-bottom: 1px solid rgba(201,169,110,0.3);
-  transition: color 0.3s ease, border-color 0.3s ease;
-  text-decoration: none;
-}
-.exp-map-btn:hover {
-  color: #ffffff;
-  border-bottom-color: rgba(255,255,255,0.3);
-}
-/* Three-column floor cards */
-.exp-floors {
-  background: #F8F6F2;
-  padding: 72px 80px;
-}
-.exp-floors h2 {
-  font-family: var(--font-zh);
-  font-weight: 300;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  color: #1A1A1A;
-  margin-bottom: 40px;
-}
-.floors-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-.floor-card {
-  background: #ffffff;
-  border: 1px solid var(--mist, #D4DDE1);
-  padding: 36px 28px;
-}
-.floor-card .floor-en {
-  font-family: var(--font-en);
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent, #C9A96E);
-  display: block;
-  margin-bottom: 10px;
-}
-.floor-card h3 {
-  font-family: var(--font-zh);
-  font-size: 1rem;
-  font-weight: 600;
-  color: #1A1A1A;
-  margin-bottom: 10px;
-}
-.floor-card p {
-  font-size: 13.5px;
-  line-height: 1.85;
-  color: #4A4A4A;
-}
-@media(max-width:1024px) {
-  .exp-grid { grid-template-columns: 1fr; }
-  .exp-content { padding: 56px 32px; }
-  .exp-floors { padding: 56px 28px; }
-  .floors-grid { grid-template-columns: 1fr; }
-}
-
-@media(max-width:1024px) {
-  .wh-split { grid-template-columns: 1fr !important; }
-}
-
 /* ── Hamburger + Mobile menu (sub-pages) ── */
 .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
 .hamburger span { display: block; width: 22px; height: 1.5px; background: var(--dark); transition: all 0.3s ease; }
@@ -463,17 +304,87 @@ img{display:block;width:100%;object-fit:cover}
 .wh-dark .info-val  { color: rgba(255,255,255,0.75) !important; }
 .wh-dark .map-link  { color: var(--gold, #C9A96E) !important; border-bottom-color: rgba(201,169,110,0.3) !important; }
 .wh-dark .section-divider { background: rgba(255,255,255,0.1) !important; }
-.wh-dark .card { background: #1A1A1A !important; border-color: rgba(255,255,255,0.1) !important; }
+.wh-dark .card { background: #1A1A1A !important; border-color: transparent !important; }
+.wh-dark .card:hover { background: #2A2A2A !important; border-color: rgba(201,169,110,0.4) !important; }
 .wh-dark .card h3 { color: #ffffff !important; }
+
+/* ── warehouse Elyse-style split layout ── */
+.page-main.wh-dark { padding: 0; }
+.wh-split { display: grid; grid-template-columns: 62% 38%; min-height: 100vh; }
+.wh-img-panel { position: sticky; top: 0; height: 100vh; overflow: hidden; }
+.wh-img-panel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wh-content-panel {
+  background: #111111; padding: 64px 52px 100px; color: var(--white); overflow-y: auto;
+}
+.wh-brand-label {
+  font-family: var(--font-en); font-size: 10px; letter-spacing: .38em;
+  text-transform: uppercase; color: rgba(255,255,255,0.35); display: block; margin-bottom: 20px;
+}
+.wh-rule { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 44px; }
+.wh-content-panel h1 {
+  font-family: 'CreamFont','Noto Sans TC',sans-serif; font-weight: normal; font-style: italic;
+  font-size: clamp(1.8rem, 2.8vw, 3rem); color: var(--white);
+  line-height: 1.2; letter-spacing: -0.01em; margin-bottom: 28px; font-style: normal;
+}
+.wh-body {
+  font-family: var(--font-zh); font-size: 14px; line-height: 2;
+  color: rgba(255,255,255,0.55) !important; margin-bottom: 18px;
+}
+.wh-info-block { margin: 32px 0 36px; display: flex; flex-direction: column; }
+.wh-info-row {
+  display: grid; grid-template-columns: 52px 1fr; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.wh-info-lbl {
+  font-family: var(--font-en); font-size: 9px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--gold); padding-top: 3px;
+}
+.wh-info-val { font-family: var(--font-zh); font-size: 13.5px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+.btn-visit {
+  display: inline-flex; align-items: center;
+  font-family: var(--font-en); font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase;
+  color: #111; background: #fff; border-radius: 100px; padding: 13px 32px;
+  margin-bottom: 64px; transition: background .25s ease, color .25s ease;
+}
+.btn-visit:hover { background: var(--gold); color: #fff; }
+.wh-floors { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 48px; }
+.wh-floors > h2 {
+  font-family: 'CreamFont','Noto Sans TC',sans-serif !important;
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem) !important; font-weight: normal !important;
+  color: var(--white) !important; margin-bottom: 32px !important;
+}
+.wh-floor-item { padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.wh-floor-en {
+  font-family: var(--font-en); font-size: 9px; letter-spacing: .28em;
+  text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px;
+}
+.wh-floor-item h3 {
+  font-family: 'CreamFont','Noto Sans TC',sans-serif; font-size: 1.05rem;
+  font-weight: normal; color: var(--white); margin-bottom: 8px;
+}
+.wh-floor-item p { font-size: 13px !important; line-height: 1.9 !important; color: rgba(255,255,255,0.48) !important; margin-bottom: 0 !important; }
+@media(max-width:900px) {
+  .wh-split { grid-template-columns: 1fr; }
+  .wh-img-panel { position: relative; height: 60vw; min-height: 260px; }
+  .wh-content-panel { padding: 40px 20px 60px; }
+  .wh-content-panel h1 { font-size: 1.75rem; }
+}
 .wh-dark .card p  { color: rgba(255,255,255,0.55) !important; }
 .wh-dark .card .en { color: var(--gold, #C9A96E) !important; }
 .wh-dark .content-block h2 { color: #ffffff !important; }
+/* 切換簡體：中文改用 SourceHanSerifCN（思源宋體）；英文維持 Montserrat */
+html[lang="zh-CN"] body,
+html[lang="zh-CN"] body *{font-family:'Montserrat','SourceHanSerifCN','Noto Sans TC',sans-serif !important}
+/* 簡體時 nav 維持原本字型（不轉 SourceHanSerifCN） */
+html[lang="zh-CN"] #top-nav, html[lang="zh-CN"] #top-nav *,
+html[lang="zh-CN"] #mobile-menu, html[lang="zh-CN"] #mobile-menu *{font-family:var(--font-zh) !important}
+html[lang="zh-CN"] #top-nav .lang-switch a, html[lang="zh-CN"] #top-nav .nav-logo span{font-family:var(--font-en) !important}
 </style>
 </head>
 <body>
 <nav id="top-nav">
   <div class="nav-inner">
-    <a href="index-website.html" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="jpg/logo/LOGO-B.png" alt="KUAN'S LIVING"
            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
       <span style="display:none">KUAN'S LIVING</span>
@@ -511,16 +422,16 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://shop.kuansliving.com" target="_blank">購物網站</a>
       </li>
       <li class="nav-direct">
-        <a href="magazine/index.html" target="_blank">線上雜誌</a>
+        <a href="http://magazine.kuansliving.com/" target="_blank">線上雜誌</a>
       </li>
     </ul>
     <div class="nav-right">
       <div class="lang-switch">
-        <a href="#" class="active">繁</a>
+        <a href="#" data-lang="zh-TW" class="active">繁</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">EN</a>
+        <a href="#" data-lang="en">EN</a>
         <span style="color:var(--mist)">|</span>
-        <a href="#">簡</a>
+        <a href="#" data-lang="zh-CN">簡</a>
       </div>
       <div class="hamburger" id="hamburger" onclick="toggleMenu()">
         <span></span><span></span><span></span>
@@ -564,75 +475,59 @@ img{display:block;width:100%;object-fit:cover}
     </div>
   </div>
   <a href="https://shop.kuansliving.com" target="_blank" class="mobile-direct">購物網站</a>
-  <a href="magazine/index.html" target="_blank" class="mobile-direct">線上雜誌</a>
+  <a href="http://magazine.kuansliving.com/" target="_blank" class="mobile-direct">線上雜誌</a>
   <div style="display:flex;gap:16px;margin-top:24px;">
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
-    <a href="#" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
+    <a href="#" data-lang="zh-TW" style="font-family:var(--font-en);font-size:13px;color:var(--accent);">繁</a>
+    <a href="#" data-lang="en" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">EN</a>
+    <a href="#" data-lang="zh-CN" style="font-family:var(--font-en);font-size:13px;color:var(--stone);">簡</a>
   </div>
 </div>
 
-<section class="page-hero dark">
-  <div class="container">
-    <a href="index-website.html" class="breadcrumb">← 首頁 Home</a>
-    <span class="label-en">Experience Space · 體驗空間</span>
-    <h1>寬庭倉庫</h1>
-    <p class="page-sub">Kuan's Warehouse — A World of Living Aesthetics</p>
-  </div>
-</section>
 <main class="page-main wh-dark">
-  <div class="container">
-
-    <div class="content-block grid-2c">
-      <div class="img-frame" style="height:460px;">
-        <img src="https://www.kuansliving.com/wp-content/uploads/2025/12/IMG_6893-1024x768.jpg"
-             onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=80'"
-             alt="寬庭倉庫體驗空間" loading="lazy">
-      </div>
-      <div>
-        <h2>以全球視野策展<br>五百坪沉浸式美學場域</h2>
-        <p>以全球視野策展，甄選來自世界各地的居家臻品。五、六樓由設計師陳瑞憲與紐約燈光設計師 David Singer 聯手打造，以輕盈工業語彙勾勒紐約 Loft 風格；一樓保留台灣早期磨石子地坪，以水晶燈飾與珍稀老件家具，營造沉靜而優雅的歷史氛圍。</p>
-        <p>三層空間，總面積約五百坪，每層以不同主題呈現，匯聚國際藝術品、精品寢飾、家具與香氛，構築多重感官交織的沉浸式居家美學場域。</p>
-        <div class="info-row" style="margin-top:8px;">
-          <span class="info-lbl" style="color:var(--accent)">地址</span>
-          <span class="info-val">112 台北市北投區中央南路二段 16 號 1/5/6 樓</span>
-        </div>
-        <div class="info-row">
-          <span class="info-lbl" style="color:var(--accent)">營業</span>
-          <span class="info-val">週二 ~ 週六　10:00 – 18:00</span>
-        </div>
-        <div class="info-row">
-          <span class="info-lbl" style="color:var(--accent)">預約</span>
-          <span class="info-val">(02) 2893-0881</span>
-        </div>
-        <a href="https://maps.google.com/?q=112%E8%87%BA%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E5%85%AB%E4%BB%99%E9%87%8C%E4%B8%AD%E5%A4%AE%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B516%E8%99%9F5%2F6%E6%A8%93"
-           target="_blank" class="btn-gold" style="margin-top:16px">查看地圖 →</a>
-      </div>
+  <div class="wh-split">
+    <div class="wh-img-panel">
+      <img src="jpg/warehouse/warehouse.jpg" alt="寬庭倉庫體驗空間">
     </div>
-
-    <div class="section-divider"></div>
-
-    <div class="content-block">
-      <h2>三層主題空間</h2>
-      <div class="grid-3c">
-        <div class="card">
-          <span class="en">1F — History</span>
+    <div class="wh-content-panel">
+      <span class="wh-brand-label">KUAN'S LIVING · 體驗空間</span>
+      <hr class="wh-rule">
+      <h1>寬庭倉庫</h1>
+      <p class="wh-body">以全球視野策展，甄選來自世界各地的居家臻品。五、六樓由設計師陳瑞憲與紐約燈光設計師 David Singer 聯手打造，以輕盈工業語彙勾勒紐約 Loft 風格；一樓保留台灣早期磨石子地坪，以水晶燈飾與珍稀老件家具，營造沉靜而優雅的歷史氛圍。</p>
+      <p class="wh-body">三層空間，總面積約五百坪，每層以不同主題呈現，匯聚國際藝術品、精品寢飾、家具與香氛，構築多重感官交織的居家美學場域。</p>
+      <div class="wh-info-block">
+        <div class="wh-info-row">
+          <span class="wh-info-lbl">地址</span>
+          <span class="wh-info-val">112 台北市北投區中央南路二段 16 號 1/5/6 樓</span>
+        </div>
+        <div class="wh-info-row">
+          <span class="wh-info-lbl">營業</span>
+          <span class="wh-info-val">週二 ~ 週六　10:00 – 18:00</span>
+        </div>
+        <div class="wh-info-row">
+          <span class="wh-info-lbl">預約</span>
+          <span class="wh-info-val">(02) 2893-0881</span>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=112%E8%87%BA%E5%8C%97%E5%B8%82%E5%8C%97%E6%8A%95%E5%8D%80%E5%85%AB%E4%BB%99%E9%87%8C%E4%B8%AD%E5%A4%AE%E5%8D%97%E8%B7%AF%E4%BA%8C%E6%AE%B516%E8%99%9F5%2F6%E6%A8%93" target="_blank" class="btn-visit">查看地圖 →</a>
+      <div class="wh-floors">
+        <h2>三層主題空間</h2>
+        <div class="wh-floor-item">
+          <span class="wh-floor-en">1F — History</span>
           <h3>一樓｜歷史氛圍</h3>
           <p>保留台灣早期磨石子地坪，水晶燈飾與珍稀老件傢俱，沉靜而優雅的歷史感。</p>
         </div>
-        <div class="card">
-          <span class="en">5F — Loft</span>
-          <h3>五樓｜紐約 Loft</h3>
+        <div class="wh-floor-item">
+          <span class="wh-floor-en">5F — Loft</span>
+          <h3>五樓｜紐約 <span style="font-family:'MontserratMedium',sans-serif">Loft</span></h3>
           <p>設計師陳瑞憲操刀，輕盈工業語彙，空間層次明亮而克制的紐約 Loft 風格。</p>
         </div>
-        <div class="card">
-          <span class="en">6F — Gallery</span>
+        <div class="wh-floor-item">
+          <span class="wh-floor-en">6F — Gallery</span>
           <h3>六樓｜藝廊展區</h3>
-          <p>David Singer 燈光設計，匯聚國際藝術品、精品寢飾與香氛的沉浸式場域。</p>
+          <p>David Singer 燈光設計，以光影烘托國際藝術品、精品寢飾與香氛，構成靜謐而奢華的藝廊氣場。</p>
         </div>
       </div>
     </div>
-
   </div>
 </main>
 
@@ -640,7 +535,7 @@ img{display:block;width:100%;object-fit:cover}
   <div class="container">
         <div class="footer-top">
       <div>
-        <div class="footer-logo">KUAN'S LIVING</div>
+        <div class="footer-logo"><img src="jpg/logo/LOGO-w.png" alt="KUAN'S LIVING" style="height:15px;width:auto;display:block;margin-bottom:4px"></div>
         <div class="footer-tag">Where Eastern Mastery<br>Meets Western Refinement.<br><br>寬庭美學股份有限公司<br>Est. 1991 · Taipei &amp; Milano</div>
       </div>
       <div class="footer-nav">
@@ -656,12 +551,80 @@ img{display:block;width:100%;object-fit:cover}
         <a href="https://www.facebook.com/kuansliving/" target="_blank">Facebook</a>
         <a href="https://kuans.co/WDDI9" target="_blank">Instagram</a>
         <a href="https://kuans.co/QBei1" target="_blank">LINE</a>
-        <a href="https://kuans.co/AMgzq" target="_blank">立即購物</a>
       </div>
     </div>
   </div>
 </footer>
 <script>
+// ── 多語系切換 (繁/簡) ─────────────────────────────────────
+(function() {
+  const TC2SC = {
+    '寬':'宽','餘':'余','場':'场','義':'义','寢':'寝','飾':'饰',
+    '織':'织','藝':'艺','裝':'装','極':'极','學':'学','關':'关',
+    '於':'于','體':'体','驗':'验','間':'间','責':'责','務':'务',
+    '據':'据','點':'点','選':'选','臥':'卧','購':'购','網':'网',
+    '線':'线','雜':'杂','誌':'志','襲':'袭','東':'东','蘊':'蕴',
+    '針':'针','陳':'陈','靜':'静','創':'创','個':'个','將':'将',
+    '訂':'订','導':'导','國':'国','際':'际','軌':'轨','蘭':'兰',
+    '誕':'诞','廣':'广','級':'级','製':'制','賞':'赏','參':'参',
+    '報':'报','華':'华','總':'总','統':'统','慶':'庆','漢':'汉',
+    '獎':'奖','機':'机','連':'连','兩':'两','獲':'获','課':'课',
+    '與':'与','嶄':'崭','視':'视','設':'设','週':'周','會':'会',
+    '館':'馆','資':'资','跡':'迹','業':'业','頂':'顶','夥':'伙',
+    '專':'专','屬':'属','誠':'诚','榮':'荣','頭':'头','艙':'舱',
+    '禮':'礼','顯':'显','顧':'顾','畫':'画','劃':'划','優':'优',
+    '帳':'账','號':'号','為':'为','來':'来','長':'长','實':'实',
+    '後':'后','過':'过','發':'发','還':'还','從':'从','說':'说',
+    '們':'们','進':'进','聯':'联','數':'数','樣':'样','標':'标',
+    '節':'节','時':'时','動':'动','開':'开','對':'对','倉':'仓',
+    '庫':'库','覽':'览','廳':'厅','術':'术','歷':'历','語':'语'
+  };
+
+  const nodeMap = new Map();
+
+  function collectNodes(el) {
+    if (el.nodeType === 3) {
+      if (el.nodeValue.trim()) nodeMap.set(el, el.nodeValue);
+    } else if (el.nodeType === 1 &&
+        !['SCRIPT','STYLE','META','LINK','NOSCRIPT'].includes(el.tagName)) {
+      el.childNodes.forEach(collectNodes);
+    }
+  }
+
+  function applyLang(lang) {
+    const sc = lang === 'zh-CN';
+    nodeMap.forEach((orig, n) => {
+      n.nodeValue = sc ? orig.replace(/./g, c => TC2SC[c] || c) : orig;
+    });
+    document.documentElement.lang = sc ? 'zh-CN' : 'zh-TW';
+    document.querySelectorAll('.page-hero h1, .content-block h2').forEach(el => {
+      el.style.fontFamily = sc ? "'MontserratMedium','SourceHanSerifCN','Noto Sans TC',sans-serif"
+                               : "'MontserratMedium','CreamFont','Noto Sans TC',sans-serif";
+    });
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      const active = el.dataset.lang === lang;
+      if (el.closest('.lang-switch')) {
+        el.classList.toggle('active', active);
+      } else {
+        el.style.color = active ? 'var(--accent)' : 'var(--stone)';
+      }
+    });
+    localStorage.setItem('kl-lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    collectNodes(document.body);
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.addEventListener('click', e => {
+        e.preventDefault();
+        applyLang(el.dataset.lang);
+      });
+    });
+    const stored = localStorage.getItem('kl-lang');
+    if (stored && stored !== 'zh-TW') applyLang(stored);
+  });
+})();
+
 // ── Mobile menu ──────────────────────────────────────────────
 function toggleMenu() {
   var menu = document.getElementById('mobile-menu');
